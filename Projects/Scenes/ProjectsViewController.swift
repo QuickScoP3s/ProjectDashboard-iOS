@@ -30,9 +30,7 @@ class ProjectsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = "Projects"
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.title = "Overview"
         
         tableView.delegate = viewModel
         tableView.dataSource = viewModel

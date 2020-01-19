@@ -30,9 +30,7 @@ class TeamsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = "Teams"
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        navigationItem.title = "Overview"
         
         tableView.delegate = viewModel
         tableView.dataSource = viewModel

@@ -37,8 +37,6 @@ class ProjectsCoordinator: Coordinator {
     
     func start() {
         let viewController = ProjectsViewController(viewModel: self.projectViewModel)
-        
-        navController.navigationBar.isTranslucent = true
         navController.setViewControllers([viewController], animated: false) // Hack to set root controller on existing navcontroller
     }
     
