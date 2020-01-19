@@ -17,7 +17,7 @@ public class Teams: Feature {
     }
 
     public init(networking: Core.Networking, database: AppDatabase, userHelper: UserHelper) {
-        self.teamsCoord = TeamsCoordinator(networking: networking, userHelper: userHelper)
+        self.teamsCoord = TeamsCoordinator(networking: networking, database: database, userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {

@@ -43,8 +43,8 @@ public class ProjectsService {
         }
     }
     
-    public func getProjectById(id: Int, completionHandler: @escaping ((Result<ProjectDTO, Error>) -> Void)) {
-        let request = Request(url: baseUrl, method: .get, urlParameters: [ "id": id ])
+    public func getProject(byId id: Int, completionHandler: @escaping ((Result<ProjectDTO, Error>) -> Void)) {
+        let request = Request(url: baseUrl + "/\(id)", method: .get)
         
         networking.execute(request: request) { result in
             switch result {

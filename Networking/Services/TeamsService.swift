@@ -44,7 +44,7 @@ public class TeamsService {
     }
     
     public func getTeamById(id: Int, completionHandler: @escaping ((Result<Team, Error>) -> Void)) {
-        let request = Request(url: baseUrl, method: .get, urlParameters: [ "id": id ])
+        let request = Request(url: baseUrl + "/\(id)", method: .get)
         
         networking.execute(request: request) { result in
             switch result {

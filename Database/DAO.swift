@@ -52,6 +52,18 @@ public extension DAO {
         }
     }
     
+    func insertAll(items: [T]) throws {
+        do {
+            try db.transaction {
+                for item in items {
+                    try db.run(table.insert(item))
+                }
+            }
+        } catch {
+            throw DatabaseError.transactionFailed
+        }
+    }
+    
     func getFirst(fromFilter filter: Table) throws -> T? {
         do {
             let row = try db.pluck(filter)

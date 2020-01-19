@@ -9,14 +9,14 @@
 import UIKit
 
 class TeamsViewController: UIViewController {
-    
+    private let viewModel: TeamsViewModel
     
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Init
     
-    init() {
-        // TODO Add viewmodel
+    init(viewModel: TeamsViewModel) {
+        self.viewModel = viewModel
         
         let bundle = Bundle(for: type(of: self))
         super.init(nibName: "TeamsView", bundle: bundle)
@@ -34,8 +34,19 @@ class TeamsViewController: UIViewController {
         navigationItem.title = "Teams"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        //tableView.delegate = viewModel
-        //tableView.dataSource = viewModel
+        tableView.delegate = viewModel
+        tableView.dataSource = viewModel
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        
+        viewModel.fetchTeams() { result in
+            switch result {
+            case .failure(let error):
+                print("😓 \(error.localizedDescription)")
+            case .success:
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     }
 }

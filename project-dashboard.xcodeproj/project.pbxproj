@@ -43,6 +43,10 @@
 		DA1A6BE223D4F74A007E5260 /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BE123D4F74A007E5260 /* ProjectRepository.swift */; };
 		DA1A6BE423D4F7C4007E5260 /* TeamsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BE323D4F7C4007E5260 /* TeamsDao.swift */; };
 		DA1A6BE623D50081007E5260 /* TeamsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BE523D50081007E5260 /* TeamsService.swift */; };
+		DA1A6BE923D50896007E5260 /* TeamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BE723D50896007E5260 /* TeamsViewModel.swift */; };
+		DA1A6BEB23D50AD9007E5260 /* ProjectDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA1A6BEA23D50AD9007E5260 /* ProjectDetailsView.xib */; };
+		DA1A6BED23D50AEE007E5260 /* ProjectDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BEC23D50AEE007E5260 /* ProjectDetailsViewController.swift */; };
+		DA1A6BEF23D50C26007E5260 /* ProjectDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1A6BEE23D50C26007E5260 /* ProjectDetailsViewModel.swift */; };
 		DA1D3B5523D1DA64001043BE /* Components.h in Headers */ = {isa = PBXBuildFile; fileRef = DA1D3B5323D1DA64001043BE /* Components.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA1D3B5823D1DA64001043BE /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1D3B5123D1DA64001043BE /* Components.framework */; };
 		DA1D3B5923D1DA64001043BE /* Components.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA1D3B5123D1DA64001043BE /* Components.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -527,6 +531,10 @@
 		DA1A6BE123D4F74A007E5260 /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
 		DA1A6BE323D4F7C4007E5260 /* TeamsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsDao.swift; sourceTree = "<group>"; };
 		DA1A6BE523D50081007E5260 /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
+		DA1A6BE723D50896007E5260 /* TeamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewModel.swift; sourceTree = "<group>"; };
+		DA1A6BEA23D50AD9007E5260 /* ProjectDetailsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectDetailsView.xib; sourceTree = "<group>"; };
+		DA1A6BEC23D50AEE007E5260 /* ProjectDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewController.swift; sourceTree = "<group>"; };
+		DA1A6BEE23D50C26007E5260 /* ProjectDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailsViewModel.swift; sourceTree = "<group>"; };
 		DA1D3B5123D1DA64001043BE /* Components.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Components.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1D3B5323D1DA64001043BE /* Components.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Components.h; sourceTree = "<group>"; };
 		DA1D3B5423D1DA64001043BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -767,6 +775,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A6BAF23D4D3FF007E5260 /* ProjectsView.xib */,
+				DA1A6BEA23D50AD9007E5260 /* ProjectDetailsView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1115,6 +1124,7 @@
 		DA84E57223D4AAD80053DD10 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DA1A6BE723D50896007E5260 /* TeamsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1131,6 +1141,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A6BC223D4EB77007E5260 /* ProjectsViewModel.swift */,
+				DA1A6BEE23D50C26007E5260 /* ProjectDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1140,6 +1151,7 @@
 			children = (
 				DA1A6BAE23D4D3F1007E5260 /* Views */,
 				DAFBC45C23D4CC030003FF5E /* ProjectsViewController.swift */,
+				DA1A6BEC23D50AEE007E5260 /* ProjectDetailsViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1607,6 +1619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A6BB223D4D82C007E5260 /* ProjectsView.xib in Resources */,
+				DA1A6BEB23D50AD9007E5260 /* ProjectDetailsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1933,6 +1946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A6BAB23D4D2FB007E5260 /* Teams.swift in Sources */,
+				DA1A6BE923D50896007E5260 /* TeamsViewModel.swift in Sources */,
 				DA1A6BAD23D4D313007E5260 /* TeamsViewController.swift in Sources */,
 				DA1A6BAC23D4D301007E5260 /* TeamsCoordinator.swift in Sources */,
 			);
@@ -1943,9 +1957,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A6BC323D4EB77007E5260 /* ProjectsViewModel.swift in Sources */,
+				DA1A6BEF23D50C26007E5260 /* ProjectDetailsViewModel.swift in Sources */,
 				DABC2F8323D4CF0100133EB8 /* ProjectsViewController.swift in Sources */,
 				DAFBC45523D4B7C00003FF5E /* ProjectsCoordinator.swift in Sources */,
 				DAFBC45323D4B7AD0003FF5E /* Projects.swift in Sources */,
+				DA1A6BED23D50AEE007E5260 /* ProjectDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

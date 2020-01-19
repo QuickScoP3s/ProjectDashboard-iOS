@@ -45,6 +45,7 @@ class AppCoordinator: Coordinator {
     }
     
     func start() {
+        viewController.view.backgroundColor = .systemBackground
         window.rootViewController = rootViewController
         
         if !userHelper.isSignedIn {

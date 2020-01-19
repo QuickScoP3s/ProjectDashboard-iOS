@@ -41,4 +41,14 @@ class ProjectsCoordinator: Coordinator {
         navController.navigationBar.isTranslucent = true
         navController.setViewControllers([viewController], animated: false) // Hack to set root controller on existing navcontroller
     }
+    
+    func presentDetails(projectId: Int) {
+        let viewModel = ProjectDetailsViewModel(projectId: projectId,
+                                                networking: self.networking,
+                                                database: self.database,
+                                                coordinator: self)
+        
+        let viewController = ProjectDetailsViewController(viewModel: viewModel)
+        navController.pushViewController(viewController, animated: true)
+    }
 }
