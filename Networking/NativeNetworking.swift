@@ -8,33 +8,65 @@
 
 import Foundation
 import Core
+import Alamofire
 
 public class NativeNetworking: Networking {
+    private let baseUrl = URL(string: "https://projectdashboard.azurewebsites.net/api/")!
     
-    private let baseUrl = "https://projectdashboard.azurewebsites.net/api/"
+    private let userHelper: UserHelper
     
-    public init() {}
+    public init(userHelper: UserHelper) {
+        self.userHelper = userHelper
+    }
     
-    public func execute(request: Request, completionHandler: @escaping ((Result<Data?, Error>) -> Void)) {
-        guard let url = URL(string: baseUrl + request.url) else {
-            return
-        }
+    public func execute(request: Core.Request, completionHandler: @escaping ((Result<Response?, Error>) -> Void)) {
+        // Preparation
+        let url = baseUrl.appendingPathComponent(request.url)
         
-        var urlRequest: URLRequest = URLRequest(url: url)
+        var headers: HTTPHeaders = [
+            .accept("application/json"),
+            .contentType("application/json")
+        ]
+        
+        if userHelper.isSignedIn {
+            headers.add(name: "Authorization", value: "Bearer \(userHelper.authToken!)")
+        }
         
         request.headers?.forEach {
-            urlRequest.addValue($0.value, forHTTPHeaderField: $0.key)
+            headers.add($0)
         }
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            if let error = error {
-                completionHandler(Result.failure(error))
-                return
-            }
-            
-            completionHandler(Result.success(data))
+        // Create URL Request
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = request.method.rawValue
+        urlRequest.httpBody = request.body?.toJSONData()
+        
+        headers.forEach {
+            urlRequest.addValue($0.value, forHTTPHeaderField: $0.name)
         }
         
-        task.resume()
+        // Execute
+        AF.request(urlRequest)
+            .validate().responseData { response in
+                self.complete(fromResponse: response, withRequest: request, completionHandler: completionHandler)
+        }
+    }
+    
+    private func complete(fromResponse response: AFDataResponse<Data>, withRequest request: Core.Request, completionHandler: (Result<Response?, Error>) -> Void) {
+        switch response.result {
+        case .success:
+            completionHandler(Result.success(Response(fromAFResponse: response, request: request)))
+        case .failure(let error):
+            completionHandler(Result.failure(error))
+        }
+    }
+}
+
+// MARK: - Extensions
+
+// Private to not pollute Apple-provided protocols
+private extension Encodable {
+    func toJSONData() -> Data? {
+        return try? JSONEncoder().encode(self)
     }
 }

@@ -10,23 +10,21 @@ import UIKit
 import Core
 
 public class Auth: Feature {
-    private var coordinator: AuthCoordinator?
-    private let networking: Core.Networking
-    private var childCoordinators: [Coordinator] = []
+    public var authenticatedCallback: (() -> Void)?
+    
+    private var authCoord: AuthCoordinator
+    public var coordinator: Coordinator {
+        return authCoord
+    }
 
-    public init(networking: Core.Networking) {
-        self.networking = networking
+    public init(networking: Core.Networking, userHelper: UserHelper) {
+        self.authCoord = AuthCoordinator(networking: networking, userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {
-        coordinator = AuthCoordinator(networking: self.networking, rootViewController: viewcontroller)
-        coordinator?.delegate = self
-        
-        if let coordinator = coordinator {
-            childCoordinators.append(coordinator)
-        }
-        
-        coordinator?.start()
+        authCoord.parentViewController = viewcontroller
+        authCoord.delegate = self
+        coordinator.start()
     }
 }
 
@@ -34,6 +32,8 @@ public class Auth: Feature {
 
 extension Auth: CoordinatorDelegate {
     public func didFinish(coordintor: Coordinator) {
-        childCoordinators.removeFirst()
+        if authenticatedCallback != nil {
+            authenticatedCallback!()
+        }
     }
 }

@@ -9,9 +9,7 @@
 import UIKit
 
 public protocol Feature {
+    var coordinator: Coordinator { get }
+    
     func start(on viewcontroller: UIViewController?)
-}
-
-public protocol HomeFeatureDelegate: class {
-    func presentLogin()
 }

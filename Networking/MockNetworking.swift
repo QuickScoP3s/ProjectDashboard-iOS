@@ -12,7 +12,7 @@ import Core
 public class MockNetworking: Networking {
     public init() {}
     
-    public func execute(request: Request, completionHandler: @escaping ((Result<Data?, Error>) -> Void)) {
+    public func execute(request: Request, completionHandler: @escaping ((Result<Response?, Error>) -> Void)) {
         guard let path = Bundle.main.path(forResource: "result", ofType: "json") else {
             completionHandler(Result.failure(NetworkError.unableToDecode))
             return
@@ -20,7 +20,9 @@ public class MockNetworking: Networking {
 
         do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-            completionHandler(Result.success(data))
+            let response = Response(request: request, data: data)
+            
+            completionHandler(Result.success(response))
         } catch let error {
             completionHandler(Result.failure(error))
         }

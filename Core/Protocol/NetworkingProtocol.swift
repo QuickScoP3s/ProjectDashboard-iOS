@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol Networking {
-    func execute(request: Request, completionHandler: @escaping ((Result<Data?, Error>) -> Void))
+    func execute(request: Request, completionHandler: @escaping ((Result<Response?, Error>) -> Void))
 }

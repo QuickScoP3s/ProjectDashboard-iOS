@@ -6,21 +6,24 @@
 //  Copyright © 2019 Quick Development. All rights reserved.
 //
 
-class User {
+import UIKit
+import SQLite
+
+public struct User: Codable {
     
-    let id: Int
-    var firstName: String
-    var lastName: String
-    var email: String
-    var phoneNumber: String
-    var company: Company
+    public let id: Int
+    public var picture: String?
+    public let firstName: String
+    public let lastName: String
+    public let email: String
+    public let phoneNumber: String
+    public let companyId: Int?
     
-    init(id: Int = 0, firstName: String, lastName: String, email: String, phoneNr: String, company: Company) {
-        self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.phoneNumber = phoneNr
-        self.company = company
+    public var UIPicture: UIImage? {
+        if picture != nil {
+            return UserPictureHelper.DecodeImage(base64String: self.picture!)
+        }
+        
+        return nil
     }
 }

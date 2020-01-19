@@ -11,43 +11,53 @@ import Core
 
 class AuthCoordinator: Coordinator {
     private let networking: Networking
-    private var childCoordinators: [Coordinator] = []
-    private weak var rootViewController: UIViewController?
+    private let userHelper: UserHelper
+    
+    weak var parentViewController: UIViewController?
     weak var delegate: CoordinatorDelegate?
     
-    private var navController: UINavigationController?
+    private var navController = UINavigationController()
+    var rootViewController: UIViewController {
+        return navController
+    }
     
-    init(networking: Networking, rootViewController: UIViewController?) {
+    private lazy var loginViewModel: LoginViewModel = {
+        return LoginViewModel(networking: self.networking, userHelper: self.userHelper, coordinator: self)
+    }()
+    
+    private lazy var registerViewModel: RegisterViewModel = {
+        return RegisterViewModel(networking: self.networking, userHelper: self.userHelper, coordinator: self)
+    }()
+    
+    init(networking: Networking, userHelper: UserHelper) {
         self.networking = networking
-        self.rootViewController = rootViewController
+        self.userHelper = userHelper
     }
     
     func start() {
-        let viewModel = LoginViewModel(networking: networking, coordinator: self)
-        let viewContoller = LoginViewController(viewModel: viewModel)
+        let viewContoller = LoginViewController(viewModel: self.loginViewModel)
         viewContoller.delegate = self
         
+        // Update to use correct root
         navController = UINavigationController(rootViewController: viewContoller)
-        navController?.modalPresentationStyle = .fullScreen
-        navController?.navigationBar.prefersLargeTitles = true
-        navController?.navigationBar.isTranslucent = true
-        rootViewController?.present(navController!, animated: true, completion: nil)
+        navController.modalPresentationStyle = .fullScreen
+        navController.navigationBar.prefersLargeTitles = true
+        navController.navigationBar.isTranslucent = true
+        
+        parentViewController?.present(navController, animated: false)
     }
     
     func presentRegister() {
+        let viewController = RegisterViewController(viewModel: self.registerViewModel)
+        viewController.delegate = self
         
-    }
-    
-    func backToLogin() {
-        
+        navController.pushViewController(viewController, animated: true)
     }
 }
 
-// MARK: - ControllerDelegates
-
 extension AuthCoordinator: ViewControllerDelegate {
     func close() {
-        rootViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
+        parentViewController?.presentedViewController?.dismiss(animated: true, completion: nil)
         delegate?.didFinish(coordintor: self)
     }
 }

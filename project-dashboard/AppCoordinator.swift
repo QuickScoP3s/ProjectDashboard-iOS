@@ -10,25 +10,62 @@ import Foundation
 import UIKit
 import Core
 import Auth
+import Home
 import Networking
+import Database
 
 class AppCoordinator: Coordinator {
     private let window: UIWindow
+    private let userHelper: UserHelper
     private let networking: Networking
-    private let rootViewController = UIViewController()
+    private let database: AppDatabase
+    
+    private let viewController = UIViewController()
+    var rootViewController: UIViewController {
+        return viewController
+    }
     
     private lazy var auth: Feature = {
-        return Auth(networking: networking)
+        var authFeature = Auth(networking: self.networking, userHelper: self.userHelper)
+        authFeature.authenticatedCallback = self.presentHome
+        
+        return authFeature
+    }()
+    
+    private lazy var home: Feature = {
+        return Home(networking: self.networking, database: self.database, userHelper: self.userHelper)
     }()
     
     init(window: UIWindow) {
         self.window = window
-        networking = NativeNetworking()
+        self.userHelper = UserHelper()
+        self.networking = NativeNetworking(userHelper: userHelper)
+
+        self.database = try! AppDatabase()
     }
     
     func start() {
         window.rootViewController = rootViewController
-        //TODO Add home etc
+        
+        if !userHelper.isSignedIn {
+            presentLogin()
+        }
+        else {
+            presentHome()
+        }
+        
         window.makeKeyAndVisible()
+    }
+    
+    func presentLogin() {
+        DispatchQueue.main.async {
+            self.auth.start(on: self.rootViewController)
+        }
+    }
+    
+    func presentHome() {
+        DispatchQueue.main.async {
+            self.home.start(on: self.rootViewController)
+        }
     }
 }

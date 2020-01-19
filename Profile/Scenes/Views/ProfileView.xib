@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Profile" customModuleProvider="target">
+            <connections>
+                <outlet property="imgProfile" destination="PRV-EQ-xnX" id="ZUA-wV-do6"/>
+                <outlet property="txtEmail" destination="uRJ-Yv-msX" id="rNM-cm-wed"/>
+                <outlet property="txtName" destination="jwP-nm-OCC" id="j16-LE-axB"/>
+                <outlet property="view" destination="iN0-l3-epB" id="WsD-hs-BfY"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="PRV-EQ-xnX" userLabel="imgProfile">
+                    <rect key="frame" x="25" y="69" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="7Iz-b3-qT6"/>
+                        <constraint firstAttribute="width" secondItem="PRV-EQ-xnX" secondAttribute="height" multiplier="1:1" id="aoJ-3p-YbX"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-wh-kdI" userLabel="stackDetails">
+                    <rect key="frame" x="115" y="80.5" width="183" height="52"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRJ-Yv-msX" userLabel="txtName">
+                            <rect key="frame" x="0.0" y="0.0" width="89.5" height="25.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="john.doe@example.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jwP-nm-OCC" userLabel="txtEmail">
+                            <rect key="frame" x="0.0" y="31.5" width="183" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yM9-wh-kdI" firstAttribute="leading" secondItem="PRV-EQ-xnX" secondAttribute="trailing" constant="15" id="QiI-6U-ASh"/>
+                <constraint firstItem="PRV-EQ-xnX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="mkB-OE-Mj0"/>
+                <constraint firstItem="yM9-wh-kdI" firstAttribute="centerY" secondItem="PRV-EQ-xnX" secondAttribute="centerY" id="pX6-OM-c12"/>
+                <constraint firstItem="PRV-EQ-xnX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="xXu-Ua-Aa6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="142.63392857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Profile" width="1000" height="1000"/>
+    </resources>
+</document>

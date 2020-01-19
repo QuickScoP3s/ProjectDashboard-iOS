@@ -8,25 +8,17 @@
 
 import Foundation
 
-class Project {
+public struct Project: Codable {
     
-    let id: Int
-    let team: Team
-    let tasks: [Task]
-    let lastEdited: Date
-    let owner: Company
-    let contact: User
+    public let id: Int
+    public let name: String
+    public let lastEdited: Date
+    public let teamId: Int
+    public let ownerId: Int
+    public let contact: ContactInfo
     
-    init(id: Int = 0, team: Team, lastEdited: Date, owner: Company, contact: User) {
-        self.id = id
-        self.team = team
-        self.tasks = [Task]()
-        self.lastEdited = lastEdited
-        self.owner = owner
-        self.contact = contact
-    }
-    
-    convenience init(team: Team, owner: Company, contact: User) {
-        self.init(team: team, lastEdited: Date(), owner: owner, contact: contact)
-    }
+    // MARK: - Repository variables
+    public var team: Team? = nil
+    public var owner: Company? = nil
+    public var taskList: [ProjectTask] = [ProjectTask]()
 }

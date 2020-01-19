@@ -6,15 +6,10 @@
 //  Copyright © 2019 Quick Development. All rights reserved.
 //
 
-class Company {
+public struct Company: Codable {
     
-    let id: Int
-    var name: String
-    var address: String
+    public let id: Int
+    public let name: String
+    public let address: String
     
-    init(id: Int = 0, name: String, address: String) {
-        self.id = id
-        self.name = name
-        self.address = address
-    }
 }
