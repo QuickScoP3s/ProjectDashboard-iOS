@@ -18,6 +18,11 @@ To open the app in Xcode, make sure to open the "Workspace" file
 ## Debugging
 - Run the app on a simulator or real device and make sure they are connected to the internet
 - The backend server is located on MS Azure
+- Use the following account to log in:
+```
+username/email: demo.user@realdolmen.be
+password: DemoPassword
+```
 
 **Note**: If the login doesn't respond or tableview stays empty, try reopening the app, as Azure is likely restarting the WebApp.
 
