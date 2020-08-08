@@ -49,4 +49,8 @@ class ProjectsCoordinator: Coordinator {
         let viewController = ProjectDetailsViewController(viewModel: viewModel)
         navController.pushViewController(viewController, animated: true)
     }
+    
+    func presentAddProject() {
+        
+    }
 }

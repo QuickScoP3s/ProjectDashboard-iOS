@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Components
 
 class ProjectsViewController: UIViewController {
     private let viewModel: ProjectsViewModel
@@ -32,19 +33,26 @@ class ProjectsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Overview"
         
+        let addProjectButton = UIBarButtonItem(title: "Create", style: .plain, target: viewModel, action: #selector(viewModel.addProject))
+        navigationItem.setRightBarButton(addProjectButton, animated: false)
+        
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProjectCell")
+        
+        tableView.activityIndicatorView.startAnimating()
         
         viewModel.fetchProjects() { result in
             switch result {
-            case .failure(let error):
-                print("😓 \(error.localizedDescription)")
-            case .success:
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                case .failure(let error):
+                    print("😓 \(error.localizedDescription)")
+                case .success:
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
             }
+
+            self.tableView.activityIndicatorView.stopAnimating()
         }
     }
 }

@@ -7,12 +7,12 @@
 		<key>Auth.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>23</integer>
 		</dict>
 		<key>Components.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>14</integer>
 		</dict>
 		<key>Controls.xcscheme_^#shared#^_</key>
 		<dict>
@@ -22,17 +22,17 @@
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>21</integer>
 		</dict>
 		<key>Database.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>18</integer>
 		</dict>
 		<key>Home.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>16</integer>
 		</dict>
 		<key>Login.xcscheme_^#shared#^_</key>
 		<dict>
@@ -42,22 +42,27 @@
 		<key>Networking.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>17</integer>
 		</dict>
 		<key>Profile.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>19</integer>
 		</dict>
 		<key>Projects.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>20</integer>
 		</dict>
 		<key>Teams.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>15</integer>
+		</dict>
+		<key>Utils.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>24</integer>
 		</dict>
 		<key>core.xcscheme_^#shared#^_</key>
 		<dict>
@@ -67,7 +72,7 @@
 		<key>project-dashboard.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>14</integer>
+			<integer>22</integer>
 		</dict>
 	</dict>
 </dict>

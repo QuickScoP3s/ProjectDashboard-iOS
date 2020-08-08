@@ -37,7 +37,7 @@ class LoginViewModel {
         }
     }
     
-    func startRegister() {
+    @objc func register() {
         coordinator?.presentRegister()
     }
 }

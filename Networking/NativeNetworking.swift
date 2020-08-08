@@ -11,11 +11,15 @@ import Core
 import Alamofire
 
 public class NativeNetworking: Networking {
-    private let baseUrl = URL(string: "https://projectdashboard.azurewebsites.net/api/")!
-    
+    private let baseUrl: URL
     private let userHelper: UserHelper
     
-    public init(userHelper: UserHelper) {
+    public convenience init(userHelper: UserHelper) {
+        self.init(baseUrl: "https://projectdashboard.azurewebsites.net/api/", userHelper: userHelper)
+    }
+    
+    public init(baseUrl: String, userHelper: UserHelper) {
+        self.baseUrl = URL(string: baseUrl)!
         self.userHelper = userHelper
     }
     
@@ -47,7 +51,8 @@ public class NativeNetworking: Networking {
         
         // Execute
         AF.request(urlRequest)
-            .validate().responseData { response in
+            .validate()
+            .responseData { response in
                 self.complete(fromResponse: response, withRequest: request, completionHandler: completionHandler)
         }
     }

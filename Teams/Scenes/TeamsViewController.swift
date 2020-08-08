@@ -32,9 +32,12 @@ class TeamsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Overview"
         
+        let addProjectButton = UIBarButtonItem(title: "Create", style: .plain, target: viewModel, action: #selector(viewModel.addTeam))
+        navigationItem.setRightBarButton(addProjectButton, animated: false)
+        
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "TeamCell")
         
         viewModel.fetchTeams() { result in
             switch result {

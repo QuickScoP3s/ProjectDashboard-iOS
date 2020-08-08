@@ -34,4 +34,9 @@ class ProfileViewModel {
     var userEmail: String {
         return user.email
     }
+    
+    @objc func signOut() {
+        userHelper.signOut()
+        coordinator?.close()
+    }
 }

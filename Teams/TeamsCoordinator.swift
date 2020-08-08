@@ -39,6 +39,6 @@ class TeamsCoordinator: Coordinator {
         let viewController = TeamsViewController(viewModel: self.teamViewModel)
         
         navController.navigationBar.isTranslucent = true
-        navController.setViewControllers([viewController], animated: false)
+        navController.setViewControllers([viewController], animated: false) // Set TeamsViewController as top (and only) controller in the stack
     }
 }

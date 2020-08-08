@@ -39,6 +39,10 @@ class TeamsViewModel: NSObject {
             }
         }
     }
+    
+    @objc func addTeam() {
+        
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -51,10 +55,16 @@ extension TeamsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let team = items?[indexPath.row]
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellIdentifier")
-        cell.textLabel?.text = team?.name
-        cell.detailTextLabel?.text = "Members: \((team?.memberIds.count ?? 0) + 1)" // count + 1 for leader (who's not included)
-        return cell
+        
+        var cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell")
+        if (cell == nil) {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TeamCell")
+        }
+        
+        cell!.textLabel?.text = team?.name
+        cell!.detailTextLabel?.text = "Members: \((team?.memberIds.count ?? 0) + 1)" // count + 1 for leader (who's not included)
+        
+        return cell!
     }
 }
 

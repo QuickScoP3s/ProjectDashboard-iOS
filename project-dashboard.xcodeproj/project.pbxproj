@@ -83,11 +83,15 @@
 		DA42B5AF23B3671E008DC912 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = DA42B5AD23B3671E008DC912 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA42B5B223B3671E008DC912 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B5AB23B3671E008DC912 /* Networking.framework */; };
 		DA42B5B323B3671E008DC912 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B5AB23B3671E008DC912 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA42B5B823B367F3008DC912 /* MockNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5B723B367F3008DC912 /* MockNetworking.swift */; };
 		DA42B5BA23B36830008DC912 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; };
 		DA42B5BB23B36830008DC912 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA42B5C023B3686B008DC912 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5BF23B3686B008DC912 /* NetworkError.swift */; };
 		DA42B5C223B368D0008DC912 /* NativeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5C123B368D0008DC912 /* NativeNetworking.swift */; };
+		DA4AC09424DEC93500C4D55B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */; };
+		DA4AC09E24DED35A00C4D55B /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4AC09C24DED35A00C4D55B /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA4AC0A124DED35A00C4D55B /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4AC09A24DED35A00C4D55B /* Utils.framework */; };
+		DA4AC0A224DED35A00C4D55B /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA4AC09A24DED35A00C4D55B /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DA4AC0A824DED3BF00C4D55B /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */; };
 		DA6948C523B3FE1F00298E8D /* Auth.h in Headers */ = {isa = PBXBuildFile; fileRef = DA6948C323B3FE1F00298E8D /* Auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA6948C823B3FE1F00298E8D /* Auth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6948C123B3FE1F00298E8D /* Auth.framework */; };
 		DA6948C923B3FE1F00298E8D /* Auth.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA6948C123B3FE1F00298E8D /* Auth.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -233,6 +237,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = DA42B58C23B36331008DC912;
 			remoteInfo = Core;
+		};
+		DA4AC09F24DED35A00C4D55B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA42B56623B361ED008DC912 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA4AC09924DED35A00C4D55B;
+			remoteInfo = Utils;
 		};
 		DA6948C623B3FE1F00298E8D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -382,6 +393,7 @@
 				DA6948C923B3FE1F00298E8D /* Auth.framework in Embed Frameworks */,
 				DA7C796B23D4A4B300D8A8A0 /* Teams.framework in Embed Frameworks */,
 				DA1D3B5923D1DA64001043BE /* Components.framework in Embed Frameworks */,
+				DA4AC0A224DED35A00C4D55B /* Utils.framework in Embed Frameworks */,
 				DA42B59523B36331008DC912 /* Core.framework in Embed Frameworks */,
 				DA75C44B23D09CB0007D10FF /* Database.framework in Embed Frameworks */,
 				DA74791723D49DF900117CA4 /* Home.framework in Embed Frameworks */,
@@ -569,9 +581,13 @@
 		DA42B5AB23B3671E008DC912 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42B5AD23B3671E008DC912 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		DA42B5AE23B3671E008DC912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA42B5B723B367F3008DC912 /* MockNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworking.swift; sourceTree = "<group>"; };
 		DA42B5BF23B3686B008DC912 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DA42B5C123B368D0008DC912 /* NativeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworking.swift; sourceTree = "<group>"; };
+		DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		DA4AC09A24DED35A00C4D55B /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4AC09C24DED35A00C4D55B /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		DA4AC09D24DED35A00C4D55B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		DA6948C123B3FE1F00298E8D /* Auth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Auth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA6948C323B3FE1F00298E8D /* Auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Auth.h; sourceTree = "<group>"; };
 		DA6948C423B3FE1F00298E8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -638,6 +654,7 @@
 				DA7C796A23D4A4B300D8A8A0 /* Teams.framework in Frameworks */,
 				DA75C44A23D09CB0007D10FF /* Database.framework in Frameworks */,
 				DA42B59423B36331008DC912 /* Core.framework in Frameworks */,
+				DA4AC0A124DED35A00C4D55B /* Utils.framework in Frameworks */,
 				DA1D3B5823D1DA64001043BE /* Components.framework in Frameworks */,
 				DA7C797B23D4A4BB00D8A8A0 /* Projects.framework in Frameworks */,
 				E448F20064F19BAA2ACE02FA /* Pods_PodBase_project_dashboard.framework in Frameworks */,
@@ -658,6 +675,13 @@
 			files = (
 				DA42B5BA23B36830008DC912 /* Core.framework in Frameworks */,
 				2AF85AFC43C5A68CD17C32B1 /* Pods_PodBase_Networking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA4AC09724DED35A00C4D55B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -816,6 +840,7 @@
 		DA1D3B5223D1DA64001043BE /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */,
 				DA1D3B6023D1DAC0001043BE /* RoundButton.swift */,
 				DA1D3B5323D1DA64001043BE /* Components.h */,
 				DA1D3B5423D1DA64001043BE /* Info.plist */,
@@ -907,6 +932,7 @@
 				DA42B58E23B36331008DC912 /* Core */,
 				DA75C44423D09CB0007D10FF /* Database */,
 				DA1D3B5223D1DA64001043BE /* Components */,
+				DA4AC09B24DED35A00C4D55B /* Utils */,
 				DA42B5B923B36830008DC912 /* Frameworks */,
 				DA42B5AC23B3671E008DC912 /* Networking */,
 				DA42B56F23B361EE008DC912 /* Products */,
@@ -927,6 +953,7 @@
 				DA7C796323D4A4B300D8A8A0 /* Teams.framework */,
 				DA7C797423D4A4BB00D8A8A0 /* Projects.framework */,
 				DA7C798523D4A4C100D8A8A0 /* Profile.framework */,
+				DA4AC09A24DED35A00C4D55B /* Utils.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -987,7 +1014,6 @@
 			isa = PBXGroup;
 			children = (
 				DA427A7723B409B900BFB0CE /* Services */,
-				DA42B5B723B367F3008DC912 /* MockNetworking.swift */,
 				DA42B5BF23B3686B008DC912 /* NetworkError.swift */,
 				DA42B5C123B368D0008DC912 /* NativeNetworking.swift */,
 				DA42B5AD23B3671E008DC912 /* Networking.h */,
@@ -1012,6 +1038,24 @@
 				9E7A2BB5F58BDFEE53D3DBB5 /* Pods_PodBase_project_dashboard.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA4AC09B24DED35A00C4D55B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DA4AC0A624DED3A900C4D55B /* Extensions */,
+				DA4AC09C24DED35A00C4D55B /* Utils.h */,
+				DA4AC09D24DED35A00C4D55B /* Info.plist */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DA4AC0A624DED3A900C4D55B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DA6948C223B3FE1F00298E8D /* Auth */ = {
@@ -1195,6 +1239,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA4AC09524DED35A00C4D55B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4AC09E24DED35A00C4D55B /* Utils.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DA6948BC23B3FE1F00298E8D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1288,6 +1340,7 @@
 				DA7C796923D4A4B300D8A8A0 /* PBXTargetDependency */,
 				DA7C797A23D4A4BB00D8A8A0 /* PBXTargetDependency */,
 				DA7C798B23D4A4C100D8A8A0 /* PBXTargetDependency */,
+				DA4AC0A024DED35A00C4D55B /* PBXTargetDependency */,
 			);
 			name = "project-dashboard";
 			productName = "project-dashboard";
@@ -1332,6 +1385,24 @@
 			name = Networking;
 			productName = Networking;
 			productReference = DA42B5AB23B3671E008DC912 /* Networking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DA4AC09924DED35A00C4D55B /* Utils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA4AC0A324DED35A00C4D55B /* Build configuration list for PBXNativeTarget "Utils" */;
+			buildPhases = (
+				DA4AC09524DED35A00C4D55B /* Headers */,
+				DA4AC09624DED35A00C4D55B /* Sources */,
+				DA4AC09724DED35A00C4D55B /* Frameworks */,
+				DA4AC09824DED35A00C4D55B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Utils;
+			productName = Utils;
+			productReference = DA4AC09A24DED35A00C4D55B /* Utils.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DA6948C023B3FE1F00298E8D /* Auth */ = {
@@ -1499,6 +1570,10 @@
 						CreatedOnToolsVersion = 11.2.1;
 						LastSwiftMigration = 1120;
 					};
+					DA4AC09924DED35A00C4D55B = {
+						CreatedOnToolsVersion = 11.6;
+						LastSwiftMigration = 1160;
+					};
 					DA6948C023B3FE1F00298E8D = {
 						CreatedOnToolsVersion = 11.3;
 						LastSwiftMigration = 1130;
@@ -1548,6 +1623,7 @@
 				DA7C796223D4A4B300D8A8A0 /* Teams */,
 				DA7C797323D4A4BB00D8A8A0 /* Projects */,
 				DA7C798423D4A4C100D8A8A0 /* Profile */,
+				DA4AC09924DED35A00C4D55B /* Utils */,
 			);
 		};
 /* End PBXProject section */
@@ -1577,6 +1653,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA42B5A923B3671E008DC912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA4AC09824DED35A00C4D55B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1856,6 +1939,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA4AC09424DEC93500C4D55B /* ActivityIndicator.swift in Sources */,
 				DA1D3B6123D1DAC0001043BE /* RoundButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1898,9 +1982,16 @@
 				DA1A6BE623D50081007E5260 /* TeamsService.swift in Sources */,
 				DA42B5C023B3686B008DC912 /* NetworkError.swift in Sources */,
 				DA1A6BC523D4EC6E007E5260 /* ProjectsService.swift in Sources */,
-				DA42B5B823B367F3008DC912 /* MockNetworking.swift in Sources */,
 				DA42B5C223B368D0008DC912 /* NativeNetworking.swift in Sources */,
 				DA427A7923B409CF00BFB0CE /* AuthService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA4AC09624DED35A00C4D55B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA4AC0A824DED3BF00C4D55B /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2039,6 +2130,11 @@
 			target = DA42B58C23B36331008DC912 /* Core */;
 			targetProxy = DA42B5BC23B36830008DC912 /* PBXContainerItemProxy */;
 		};
+		DA4AC0A024DED35A00C4D55B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA4AC09924DED35A00C4D55B /* Utils */;
+			targetProxy = DA4AC09F24DED35A00C4D55B /* PBXContainerItemProxy */;
+		};
 		DA6948C723B3FE1F00298E8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DA6948C023B3FE1F00298E8D /* Auth */;
@@ -2161,6 +2257,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Components/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2191,6 +2288,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Components/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2329,6 +2427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "project-dashboard/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2348,6 +2447,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "project-dashboard/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2373,6 +2473,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2404,6 +2505,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = core/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2434,6 +2536,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Networking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2465,6 +2568,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Networking/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2474,6 +2578,63 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DA4AC0A424DED35A00C4D55B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Utils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quickdev.Utils;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DA4AC0A524DED35A00C4D55B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Utils/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.quickdev.Utils;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -2494,6 +2655,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Auth/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2523,6 +2685,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Auth/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2551,6 +2714,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Home/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2580,6 +2744,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Home/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2608,6 +2773,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Database/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2637,6 +2803,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Database/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2666,6 +2833,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Teams/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2697,6 +2865,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Teams/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2727,6 +2896,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Projects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2758,6 +2928,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Projects/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2788,6 +2959,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Profile/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2819,6 +2991,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Profile/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2879,6 +3052,15 @@
 			buildConfigurations = (
 				DA42B5B523B3671E008DC912 /* Debug */,
 				DA42B5B623B3671E008DC912 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA4AC0A324DED35A00C4D55B /* Build configuration list for PBXNativeTarget "Utils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA4AC0A424DED35A00C4D55B /* Debug */,
+				DA4AC0A524DED35A00C4D55B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

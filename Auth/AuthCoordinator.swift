@@ -55,6 +55,8 @@ class AuthCoordinator: Coordinator {
     }
 }
 
+// MARK: - ViewControllerDelegate
+
 extension AuthCoordinator: ViewControllerDelegate {
     func close() {
         parentViewController?.presentedViewController?.dismiss(animated: true, completion: nil)

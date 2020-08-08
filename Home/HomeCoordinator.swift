@@ -21,6 +21,7 @@ class HomeCoordinator: Coordinator {
     private var features: [Feature]?
     
     weak var parentViewController: UIViewController?
+    weak var delegate: CoordinatorDelegate?
     
     private var tabBarController = HomeTabBarController()
     var rootViewController: UIViewController {
@@ -36,7 +37,10 @@ class HomeCoordinator: Coordinator {
     }()
     
     private lazy var profile: Feature = {
-        return Profile(database: self.database, userHelper: self.userHelper)
+        let profileFeature = Profile(database: self.database, userHelper: self.userHelper)
+        profileFeature.signOutCallback = self.close
+        
+        return profileFeature
     }()
 
     init(networking: Networking, database: AppDatabase, userHelper: UserHelper) {
@@ -84,10 +88,21 @@ class HomeCoordinator: Coordinator {
     }
 }
 
+// MARK: - TabBarDelegate
+
 extension HomeCoordinator: TabBarDelegate {
     func tabChanged(selectedIndex: Int) {
         DispatchQueue.main.async {
             self.features?[selectedIndex].start(on: self.tabBarController)
         }
+    }
+}
+
+// MARK: - ViewControllerDelegate
+
+extension HomeCoordinator: ViewControllerDelegate {
+    func close() {
+        parentViewController?.presentedViewController?.dismiss(animated: false, completion: nil)
+        delegate?.didFinish(coordintor: self)
     }
 }

@@ -26,20 +26,28 @@ class AppCoordinator: Coordinator {
     }
     
     private lazy var auth: Feature = {
-        var authFeature = Auth(networking: self.networking, userHelper: self.userHelper)
+        let authFeature = Auth(networking: self.networking, userHelper: self.userHelper)
         authFeature.authenticatedCallback = self.presentHome
         
         return authFeature
     }()
     
     private lazy var home: Feature = {
-        return Home(networking: self.networking, database: self.database, userHelper: self.userHelper)
+        let homeFeature = Home(networking: self.networking, database: self.database, userHelper: self.userHelper)
+        homeFeature.signOutCallback = self.presentLogin
+        
+        return homeFeature
     }()
     
     init(window: UIWindow) {
         self.window = window
         self.userHelper = UserHelper()
-        self.networking = NativeNetworking(userHelper: userHelper)
+        
+        #if DEBUG
+            self.networking = NativeNetworking(baseUrl: "https://localhost:5001/api/", userHelper: userHelper)
+        #else
+            self.networking = NativeNetworking(userHelper: userHelper)
+        #endif
 
         self.database = try! AppDatabase()
     }

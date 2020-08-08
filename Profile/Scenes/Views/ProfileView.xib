@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Profile" customModuleProvider="target">
             <connections>
+                <outlet property="btnSignOut" destination="i9R-fO-3KS" id="JdK-5L-wka"/>
                 <outlet property="imgProfile" destination="PRV-EQ-xnX" id="ZUA-wV-do6"/>
-                <outlet property="txtEmail" destination="uRJ-Yv-msX" id="rNM-cm-wed"/>
-                <outlet property="txtName" destination="jwP-nm-OCC" id="j16-LE-axB"/>
+                <outlet property="txtEmail" destination="jwP-nm-OCC" id="dr9-Eq-qKX"/>
+                <outlet property="txtName" destination="uRJ-Yv-msX" id="h11-MT-pTF"/>
                 <outlet property="view" destination="iN0-l3-epB" id="WsD-hs-BfY"/>
             </connections>
         </placeholder>
@@ -21,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile" translatesAutoresizingMaskIntoConstraints="NO" id="PRV-EQ-xnX" userLabel="imgProfile">
-                    <rect key="frame" x="25" y="69" width="75" height="75"/>
+                    <rect key="frame" x="25" y="69" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="75" id="7Iz-b3-qT6"/>
+                        <constraint firstAttribute="height" constant="50" id="7Iz-b3-qT6"/>
                         <constraint firstAttribute="width" secondItem="PRV-EQ-xnX" secondAttribute="height" multiplier="1:1" id="aoJ-3p-YbX"/>
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="yM9-wh-kdI" userLabel="stackDetails">
-                    <rect key="frame" x="115" y="80.5" width="183" height="52"/>
+                    <rect key="frame" x="90" y="68" width="183" height="52"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRJ-Yv-msX" userLabel="txtName">
                             <rect key="frame" x="0.0" y="0.0" width="89.5" height="25.5"/>
@@ -44,16 +45,36 @@
                         </label>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9R-fO-3KS" userLabel="btnSignOut" customClass="RoundButton" customModule="Components">
+                    <rect key="frame" x="90" y="807" width="234" height="40"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gtK-qJ-94I"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Sign Out">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="i9R-fO-3KS" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3Jp-DB-7Nm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="i9R-fO-3KS" secondAttribute="bottom" constant="15" id="5Zo-wk-oDm"/>
+                <constraint firstItem="i9R-fO-3KS" firstAttribute="leading" secondItem="yM9-wh-kdI" secondAttribute="leading" id="Qea-6Q-CKQ"/>
                 <constraint firstItem="yM9-wh-kdI" firstAttribute="leading" secondItem="PRV-EQ-xnX" secondAttribute="trailing" constant="15" id="QiI-6U-ASh"/>
                 <constraint firstItem="PRV-EQ-xnX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="25" id="mkB-OE-Mj0"/>
                 <constraint firstItem="yM9-wh-kdI" firstAttribute="centerY" secondItem="PRV-EQ-xnX" secondAttribute="centerY" id="pX6-OM-c12"/>
                 <constraint firstItem="PRV-EQ-xnX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="xXu-Ua-Aa6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="131.8840579710145" y="142.63392857142856"/>
+            <point key="canvasLocation" x="131.8840579710145" y="141.96428571428569"/>
         </view>
     </objects>
     <resources>

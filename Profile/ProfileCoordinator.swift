@@ -15,6 +15,7 @@ class ProfileCoordinator: Coordinator {
     private let userHelper: UserHelper
     
     weak var parentViewController: UIViewController?
+    weak var delegate: CoordinatorDelegate?
     
     private let navController = UINavigationController()
     var rootViewController: UIViewController {
@@ -32,8 +33,17 @@ class ProfileCoordinator: Coordinator {
     
     func start() {
         let viewController = ProfileViewController(viewModel: self.profileViewModel)
+        viewController.delegate = self
         
         navController.navigationBar.isTranslucent = true
         navController.setViewControllers([viewController], animated: false)
+    }
+}
+
+// MARK: - ViewControllerDelegate
+
+extension ProfileCoordinator: ViewControllerDelegate {
+    func close() {
+        delegate?.didFinish(coordintor: self)
     }
 }

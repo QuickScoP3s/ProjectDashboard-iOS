@@ -10,6 +10,7 @@ import UIKit
 import Core
 import Components
 import LPSnackbar
+import Utils
 
 class LoginViewController: UIViewController {
     weak var delegate: ViewControllerDelegate?
@@ -38,21 +39,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         navigationItem.title = "Login"
         
         // Load image from MAIN bundle (Project assets)
         iconView.image = UIImage(named: "Icon")
         
         btnLogin.addTarget(self, action: #selector(login), for: .touchUpInside)
-        btnRegister.addTarget(self, action: #selector(register), for: .touchUpInside)
+        btnLogin.setBackgroundColor(color: .gray, forState: .disabled)
+        
+        btnRegister.addTarget(viewModel, action: #selector(viewModel.register), for: .touchUpInside)
         
         [txtEmailField, txtPasswordField].forEach({ $0?.addTarget(self, action: #selector(credentialsChanged), for: .editingChanged) })
-    }
-    
-    @objc
-    func togglePasswordVisibile(_ btn: UIButton) {
-        btn.isSelected = !btn.isSelected
-        txtPasswordField.isSecureTextEntry = !txtPasswordField.isSecureTextEntry
     }
     
     @objc
@@ -81,10 +79,5 @@ class LoginViewController: UIViewController {
                 self.delegate?.close()
             }
         }
-    }
-    
-    @objc
-    func register() {
-        viewModel.startRegister()
     }
 }

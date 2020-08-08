@@ -39,6 +39,10 @@ class ProjectsViewModel: NSObject {
             }
         }
     }
+    
+    @objc func addProject() {
+        coordinator?.presentAddProject()
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -51,10 +55,15 @@ extension ProjectsViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let project = items?[indexPath.row]
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cellIdentifier")
-        cell.textLabel?.text = project?.name
-        cell.detailTextLabel?.text = "Team: \(project?.team?.name ?? "")"
-        return cell
+        var cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
+        if (cell == nil) {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "ProjectCell")
+        }
+        
+        cell!.textLabel?.text = project?.name
+        cell!.detailTextLabel?.text = "Team: \(project?.team?.name ?? "")"
+        
+        return cell!
     }
 }
 
