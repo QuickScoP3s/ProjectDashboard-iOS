@@ -43,6 +43,7 @@ class AppCoordinator: Coordinator {
         self.window = window
         self.userHelper = UserHelper()
         
+        // Keep only 'else'-statement, if debugging on a real device or change "localhost" to <ip-address> of development machine
         #if DEBUG
             self.networking = NativeNetworking(baseUrl: "https://localhost:5001/api/", userHelper: userHelper)
         #else
