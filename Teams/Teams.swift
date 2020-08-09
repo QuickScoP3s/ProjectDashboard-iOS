@@ -8,7 +8,6 @@
 
 import UIKit
 import Core
-import Database
 
 public class Teams: Feature {
     private let teamsCoord: TeamsCoordinator
@@ -16,8 +15,8 @@ public class Teams: Feature {
         return teamsCoord
     }
 
-    public init(networking: Core.Networking, database: AppDatabase, userHelper: UserHelper) {
-        self.teamsCoord = TeamsCoordinator(networking: networking, database: database, userHelper: userHelper)
+    public init(networking: Core.Networking, userHelper: UserHelper) {
+        self.teamsCoord = TeamsCoordinator(networking: networking, userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {

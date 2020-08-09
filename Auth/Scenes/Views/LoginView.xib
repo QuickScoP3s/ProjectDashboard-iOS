@@ -85,17 +85,22 @@
                         </button>
                     </subviews>
                     <variation key="widthClass=regular" axis="horizontal"/>
+                    <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
                 </stackView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="3Ht-jz-YFQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="16a-7B-wn6"/>
+                <constraint firstItem="3Ht-jz-YFQ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="16a-7B-wn6">
+                    <variation key="heightClass=compact" constant="25"/>
+                </constraint>
                 <constraint firstItem="4nT-l1-cmR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="3cs-IN-wk2"/>
                 <constraint firstItem="3Ht-jz-YFQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dBo-1h-96g"/>
                 <constraint firstItem="VNc-I6-bF9" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="feI-vL-vqv"/>
                 <constraint firstItem="4nT-l1-cmR" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="64" id="kK2-Vy-JEr"/>
                 <constraint firstItem="VNc-I6-bF9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="p1p-o9-L9R"/>
-                <constraint firstItem="VNc-I6-bF9" firstAttribute="top" secondItem="3Ht-jz-YFQ" secondAttribute="bottom" constant="64" id="qa0-Y1-ubC"/>
+                <constraint firstItem="VNc-I6-bF9" firstAttribute="top" secondItem="3Ht-jz-YFQ" secondAttribute="bottom" constant="64" id="qa0-Y1-ubC">
+                    <variation key="heightClass=compact" constant="40"/>
+                </constraint>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="4nT-l1-cmR" secondAttribute="bottom" constant="8" id="sMx-X8-pY4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

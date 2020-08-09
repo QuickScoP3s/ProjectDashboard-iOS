@@ -8,28 +8,24 @@
 
 import UIKit
 import Core
-import Database
 import Networking
 
 class ProjectDetailsViewModel {
-    private let networking: Networking
-    private let database: AppDatabase
+    private let projectsService: ProjectsService
     private weak var coordinator: ProjectsCoordinator?
     
     private let projectId: Int
     var project: Project?
 
-    init(projectId: Int, networking: Networking, database: AppDatabase, coordinator: ProjectsCoordinator) {
+    init(projectId: Int, networking: Networking, coordinator: ProjectsCoordinator) {
         self.projectId = projectId
-        self.networking = networking
-        self.database = database
+        
+        self.projectsService = ProjectsService(networking: networking)
         self.coordinator = coordinator
     }
     
     func fetchProject(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
-        let projectRepo = ProjectRepository(networking: self.networking, database: self.database)
-        
-        projectRepo.getProject(byId: self.projectId) { result in
+        projectsService.getProject(byId: self.projectId) { result in
             switch result {
             case .failure(let error):
                 completionHandler(Result.failure(error))

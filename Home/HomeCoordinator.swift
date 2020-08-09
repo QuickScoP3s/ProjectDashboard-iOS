@@ -8,14 +8,12 @@
 
 import UIKit
 import Core
-import Database
 import Projects
 import Teams
 import Profile
 
 class HomeCoordinator: Coordinator {
     private let networking: Networking
-    private let database: AppDatabase
     private let userHelper: UserHelper
     
     private var features: [Feature]?
@@ -29,23 +27,22 @@ class HomeCoordinator: Coordinator {
     }
     
     private lazy var projects: Feature = {
-        return Projects(networking: self.networking, database: self.database, userHelper: self.userHelper)
+        return Projects(networking: self.networking, userHelper: self.userHelper)
     }()
     
     private lazy var teams: Feature = {
-        return Teams(networking: self.networking, database: self.database, userHelper: self.userHelper)
+        return Teams(networking: self.networking, userHelper: self.userHelper)
     }()
     
     private lazy var profile: Feature = {
-        let profileFeature = Profile(database: self.database, userHelper: self.userHelper)
+        let profileFeature = Profile(userHelper: self.userHelper)
         profileFeature.signOutCallback = self.close
         
         return profileFeature
     }()
 
-    init(networking: Networking, database: AppDatabase, userHelper: UserHelper) {
+    init(networking: Networking, userHelper: UserHelper) {
         self.networking = networking
-        self.database = database
         self.userHelper = userHelper
     }
     

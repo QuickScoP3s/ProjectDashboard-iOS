@@ -8,7 +8,6 @@
 
 import UIKit
 import Core
-import Database
 
 public class Projects: Feature {
     private let projectsCoord: ProjectsCoordinator
@@ -16,8 +15,8 @@ public class Projects: Feature {
         return projectsCoord
     }
 
-    public init(networking: Core.Networking, database: AppDatabase, userHelper: UserHelper) {
-        self.projectsCoord = ProjectsCoordinator(networking: networking, database: database, userHelper: userHelper)
+    public init(networking: Core.Networking, userHelper: UserHelper) {
+        self.projectsCoord = ProjectsCoordinator(networking: networking, userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SQLite
 
 public struct User: Codable {
     
@@ -17,7 +16,6 @@ public struct User: Codable {
     public let lastName: String
     public let email: String
     public let phoneNumber: String
-    public let companyId: Int?
     
     public var UIPicture: UIImage? {
         if picture != nil {

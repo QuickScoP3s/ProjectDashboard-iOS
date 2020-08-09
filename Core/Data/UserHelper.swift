@@ -48,9 +48,8 @@ public class UserHelper {
         let firstName = jwt.claim(name: "given_name").string!
         let lastName = jwt.claim(name: "family_name").string!
         let phoneNr = jwt.claim(name: "phone_number").string!
-        let companyId = jwt.claim(name: "company").integer
         
-        var user = User(id: id, picture: picture, firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNr, companyId: companyId)
+        var user = User(id: id, picture: picture, firstName: firstName, lastName: lastName, email: email, phoneNumber: phoneNr)
         user.picture = picture
         
         return user

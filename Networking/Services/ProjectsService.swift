@@ -18,52 +18,73 @@ public class ProjectsService {
     
     // MARK: - API Calls
     
-    public func getProjects(completionHandler: @escaping ((Result<[ProjectDTO], Error>) -> Void)) {
+    public func getProjects(completionHandler: @escaping ((Result<[Project], Error>) -> Void)) {
         let request = Request(url: baseUrl, method: .get)
         
         networking.execute(request: request) { result in
             switch result {
-                case .failure(let error):
-                    print("Network error: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode([Project].self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
                     completionHandler(Result.failure(error))
-
-                case .success(let response):
-                    guard let data = response?.data else {
-                        return
-                    }
-                    
-                    do {
-                        let response = try JSONDecoder().decode([ProjectDTO].self, from: data)
-                        completionHandler(Result.success(response))
-                    }
-                    catch let error {
-                        completionHandler(Result.failure(error))
-                    }
+                }
             }
         }
     }
     
-    public func getProject(byId id: Int, completionHandler: @escaping ((Result<ProjectDTO, Error>) -> Void)) {
-        let request = Request(url: baseUrl + "/\(id)", method: .get)
+    public func getProject(byId id: Int, completionHandler: @escaping ((Result<Project, Error>) -> Void)) {
+        let request = Request(url: "\(baseUrl)/\(id)", method: .get)
         
         networking.execute(request: request) { result in
             switch result {
-                case .failure(let error):
-                    print("Network error: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else { return }
+                
+                do {
+                    let response = try JSONDecoder().decode(Project.self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
                     completionHandler(Result.failure(error))
-
-                case .success(let response):
-                    guard let data = response?.data else {
-                        return
-                    }
-                    
-                    do {
-                        let response = try JSONDecoder().decode(ProjectDTO.self, from: data)
-                        completionHandler(Result.success(response))
-                    }
-                    catch let error {
-                        completionHandler(Result.failure(error))
-                    }
+                }
+            }
+        }
+    }
+    
+    public func postProject(project: ProjectDTO, completionHandler: @escaping ((Result<Project, Error>) -> Void)) {
+        let request = Request(url: baseUrl, method: .post, body: project)
+        
+        networking.execute(request: request) { result in
+            switch result {
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else { return }
+                
+                do {
+                    let response = try JSONDecoder().decode(Project.self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
+                    completionHandler(Result.failure(error))
+                }
             }
         }
     }

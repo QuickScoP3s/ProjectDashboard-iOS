@@ -12,13 +12,11 @@ import Core
 import Auth
 import Home
 import Networking
-import Database
 
 class AppCoordinator: Coordinator {
     private let window: UIWindow
     private let userHelper: UserHelper
     private let networking: Networking
-    private let database: AppDatabase
     
     private let viewController = UIViewController()
     var rootViewController: UIViewController {
@@ -33,7 +31,7 @@ class AppCoordinator: Coordinator {
     }()
     
     private lazy var home: Feature = {
-        let homeFeature = Home(networking: self.networking, database: self.database, userHelper: self.userHelper)
+        let homeFeature = Home(networking: self.networking, userHelper: self.userHelper)
         homeFeature.signOutCallback = self.presentLogin
         
         return homeFeature
@@ -49,8 +47,6 @@ class AppCoordinator: Coordinator {
         #else
             self.networking = NativeNetworking(userHelper: userHelper)
         #endif
-
-        self.database = try! AppDatabase()
     }
     
     func start() {

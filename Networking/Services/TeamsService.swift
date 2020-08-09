@@ -23,47 +23,72 @@ public class TeamsService {
         
         networking.execute(request: request) { result in
             switch result {
-                case .failure(let error):
-                    print("Network error: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode([Team].self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
                     completionHandler(Result.failure(error))
-
-                case .success(let response):
-                    guard let data = response?.data else {
-                        return
-                    }
-                    
-                    do {
-                        let response = try JSONDecoder().decode([Team].self, from: data)
-                        completionHandler(Result.success(response))
-                    }
-                    catch let error {
-                        completionHandler(Result.failure(error))
-                    }
+                }
             }
         }
     }
     
     public func getTeamById(id: Int, completionHandler: @escaping ((Result<Team, Error>) -> Void)) {
-        let request = Request(url: baseUrl + "/\(id)", method: .get)
+        let request = Request(url: "\(baseUrl)/\(id)", method: .get)
         
         networking.execute(request: request) { result in
             switch result {
-                case .failure(let error):
-                    print("Network error: \(error.localizedDescription)")
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode(Team.self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
                     completionHandler(Result.failure(error))
-
-                case .success(let response):
-                    guard let data = response?.data else {
-                        return
-                    }
-                    
-                    do {
-                        let response = try JSONDecoder().decode(Team.self, from: data)
-                        completionHandler(Result.success(response))
-                    }
-                    catch let error {
-                        completionHandler(Result.failure(error))
-                    }
+                }
+            }
+        }
+    }
+    
+    public func postTeam(_ team: TeamDTO, completionHandler: @escaping ((Result<Team, Error>) -> Void)) {
+        let request = Request(url: baseUrl, method: .post, body: team)
+        
+        networking.execute(request: request) { result in
+            switch result {
+            case .failure(let error):
+                print("Network error: \(error.localizedDescription)")
+                completionHandler(Result.failure(error))
+                
+            case .success(let response):
+                guard let data = response?.data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode(Team.self, from: data)
+                    completionHandler(Result.success(response))
+                }
+                catch let error {
+                    completionHandler(Result.failure(error))
+                }
             }
         }
     }

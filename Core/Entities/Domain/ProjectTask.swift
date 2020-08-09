@@ -8,17 +8,4 @@
 
 public class ProjectTask: Codable {
     
-    //TODO Change to new Domain Models
-    
-    public let id: Int
-    public let title: String
-    public let description: String
-    public let assignee: User?
-    
-    init(id: Int = 0, title: String, description: String, assignee: User? = nil) {
-        self.id = id
-        self.title = title
-        self.description = description
-        self.assignee = assignee
-    }
 }

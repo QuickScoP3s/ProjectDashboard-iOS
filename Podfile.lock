@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (5.0.5)
+  - AlamofireNetworkActivityLogger (3.0.0):
+    - Alamofire (~> 5.0.0-rc.2)
+  - JWTDecode (2.4.1)
+  - lottie-ios (3.1.8)
+  - LPSnackbar (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.0.0-rc.2)
+  - AlamofireNetworkActivityLogger (~> 3.0)
+  - JWTDecode
+  - lottie-ios
+  - LPSnackbar
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireNetworkActivityLogger
+    - JWTDecode
+    - lottie-ios
+    - LPSnackbar
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  AlamofireNetworkActivityLogger: 94e8a7d454a4a9800cef1d0c1d3699754493684b
+  JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+  LPSnackbar: 27311158a371484d51fa5eace8bbe7a08eaddcfa
+
+PODFILE CHECKSUM: 822cf1d149b5731325fbb0006fdc444814e73d9d
+
+COCOAPODS: 1.9.3

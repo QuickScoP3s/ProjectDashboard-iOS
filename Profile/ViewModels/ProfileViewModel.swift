@@ -9,15 +9,12 @@
 import UIKit
 import Core
 import Networking
-import Database
 
 class ProfileViewModel {
-    private let database: AppDatabase
     private let userHelper: UserHelper
     private weak var coordinator: ProfileCoordinator?
 
-    init(database: AppDatabase, userHelper: UserHelper, coordinator: ProfileCoordinator) {
-        self.database = database
+    init(userHelper: UserHelper, coordinator: ProfileCoordinator) {
         self.userHelper = userHelper
         self.coordinator = coordinator
     }

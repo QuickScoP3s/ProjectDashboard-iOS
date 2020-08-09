@@ -8,7 +8,6 @@
 
 import UIKit
 import Core
-import Database
 
 public class Profile: Feature {
     public var signOutCallback: (() -> Void)?
@@ -18,8 +17,8 @@ public class Profile: Feature {
         return profileCoord
     }
 
-    public init(database: AppDatabase, userHelper: UserHelper) {
-        self.profileCoord = ProfileCoordinator(database: database, userHelper: userHelper)
+    public init(userHelper: UserHelper) {
+        self.profileCoord = ProfileCoordinator(userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {

@@ -8,7 +8,6 @@
 
 import UIKit
 import Core
-import Database
 
 public class Home: Feature {
     public var signOutCallback: (() -> Void)?
@@ -18,8 +17,8 @@ public class Home: Feature {
         return homeCoord
     }
 
-    public init(networking: Core.Networking, database: AppDatabase, userHelper: UserHelper) {
-        self.homeCoord = HomeCoordinator(networking: networking, database: database, userHelper: userHelper)
+    public init(networking: Core.Networking, userHelper: UserHelper) {
+        self.homeCoord = HomeCoordinator(networking: networking, userHelper: userHelper)
     }
     
     public func start(on viewcontroller: UIViewController?) {

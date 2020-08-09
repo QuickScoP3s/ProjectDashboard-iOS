@@ -1,3 +1,4 @@
 project-dashboard.xcworkspace
-Podfile.lock
 Pods/
+
+.DS_STORE

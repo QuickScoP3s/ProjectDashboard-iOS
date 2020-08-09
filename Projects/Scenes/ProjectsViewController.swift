@@ -38,9 +38,13 @@ class ProjectsViewController: UIViewController {
         
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ProjectCell")
+        tableView.register(SubtitleCell.self, forCellReuseIdentifier: "ProjectCell")
         
-        tableView.activityIndicatorView.startAnimating()
+        reloadProjects()
+    }
+    
+    func reloadProjects() {
+        view.activityIndicator.startAnimating()
         
         viewModel.fetchProjects() { result in
             switch result {
@@ -52,7 +56,7 @@ class ProjectsViewController: UIViewController {
                     }
             }
 
-            self.tableView.activityIndicatorView.stopAnimating()
+            self.view.activityIndicator.stopAnimating()
         }
     }
 }

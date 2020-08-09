@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  ProfileCoordinator.swift
 //  project-dashboard
 //
 //  Created by Waut Wyffels on 19/01/2020.
@@ -8,10 +8,8 @@
 
 import UIKit
 import Core
-import Database
 
 class ProfileCoordinator: Coordinator {
-    private let database: AppDatabase
     private let userHelper: UserHelper
     
     weak var parentViewController: UIViewController?
@@ -23,11 +21,10 @@ class ProfileCoordinator: Coordinator {
     }
     
     private lazy var profileViewModel: ProfileViewModel = {
-        return ProfileViewModel(database: self.database, userHelper: self.userHelper, coordinator: self)
+        return ProfileViewModel(userHelper: self.userHelper, coordinator: self)
     }()
 
-    init(database: AppDatabase, userHelper: UserHelper) {
-        self.database = database
+    init(userHelper: UserHelper) {
         self.userHelper = userHelper
     }
     

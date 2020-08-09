@@ -2,11 +2,11 @@ project "project-dashboard.xcodeproj"
 use_frameworks! 
 
 abstract_target 'PodBase' do
-  pod 'SQLite.swift', '~> 0.12.0'
-  pod 'JWTDecode', '~> 2.4'
-  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'JWTDecode'
+  pod 'Alamofire', '~> 5.0.0-rc.2'
   pod 'AlamofireNetworkActivityLogger', '~> 3.0'
-  pod 'LPSnackbar', '~> 3.1.0'
+  pod 'LPSnackbar'
+  pod 'lottie-ios'
 
   target 'Auth' do
 
@@ -32,7 +32,7 @@ abstract_target 'PodBase' do
 
   end
 
-  target 'Database' do
+  target 'Utils' do
 
   end
 

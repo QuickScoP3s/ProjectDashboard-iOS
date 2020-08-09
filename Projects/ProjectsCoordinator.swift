@@ -8,11 +8,9 @@
 
 import UIKit
 import Core
-import Database
 
 class ProjectsCoordinator: Coordinator {
     private let networking: Networking
-    private let database: AppDatabase
     private let userHelper: UserHelper
     
     weak var parentViewController: UIViewController?
@@ -24,26 +22,23 @@ class ProjectsCoordinator: Coordinator {
     
     private lazy var projectViewModel: ProjectsViewModel = {
         return ProjectsViewModel(networking: self.networking,
-                                 database: self.database,
                                  userHelper: self.userHelper,
                                  coordinator: self)
     }()
 
-    init(networking: Networking, database: AppDatabase, userHelper: UserHelper) {
+    init(networking: Networking, userHelper: UserHelper) {
         self.networking = networking
-        self.database = database
         self.userHelper = userHelper
     }
     
     func start() {
         let viewController = ProjectsViewController(viewModel: self.projectViewModel)
-        navController.setViewControllers([viewController], animated: false) // Hack to set root controller on existing navcontroller
+        navController.setViewControllers([viewController], animated: false) // Set viewcontroller as first and only controller in the stack
     }
     
     func presentDetails(projectId: Int) {
         let viewModel = ProjectDetailsViewModel(projectId: projectId,
                                                 networking: self.networking,
-                                                database: self.database,
                                                 coordinator: self)
         
         let viewController = ProjectDetailsViewController(viewModel: viewModel)
@@ -51,6 +46,19 @@ class ProjectsCoordinator: Coordinator {
     }
     
     func presentAddProject() {
+        let viewModel = ProjectCreatorViewModel(networking: self.networking,
+                                                userHelper: self.userHelper,
+                                                coordinator: self)
         
+        let viewController = ProjectCreatorViewController(viewModel: viewModel)
+        navController.present(viewController, animated: true)
+    }
+    
+    func refreshProjectsOverview() {
+        guard let projectView = self.navController.viewControllers[0] as? ProjectsViewController else {
+            return
+        }
+        
+        projectView.reloadProjects()
     }
 }

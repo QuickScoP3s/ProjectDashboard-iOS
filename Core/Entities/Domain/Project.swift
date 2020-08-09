@@ -8,17 +8,16 @@
 
 import Foundation
 
-public struct Project: Codable {
+public class Project: Codable {
     
     public let id: Int
     public let name: String
-    public let lastEdited: Date
-    public let teamId: Int
-    public let ownerId: Int
-    public let contact: ContactInfo
     
-    // MARK: - Repository variables
-    public var team: Team? = nil
-    public var owner: Company? = nil
-    public var taskList: [ProjectTask] = [ProjectTask]()
+    public let teamId: Int
+    public let team: Team
+    
+    public let lastEdit: Date
+    public let contactPerson: ContactInfo
+    
+    public let tasks: [ProjectTask]
 }

@@ -55,12 +55,6 @@ class ProjectDetailsViewController: UIViewController {
         
     private func updateInfo() {
         let project = viewModel.project
-        let contact = project?.contact
-        
-        txtProjectName.text = project?.name
-        txtTeamName.text = project?.team?.name
-        txtContactName.text = "\(contact?.firstName ?? "") \(contact?.lastName ?? "")"
-        txtContactEmail.text = contact?.email
-        txtContactPhone.text = contact?.phoneNumber
+        let contact = project?.contactPerson
     }
 }

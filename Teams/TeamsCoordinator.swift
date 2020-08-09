@@ -8,11 +8,9 @@
 
 import UIKit
 import Core
-import Database
 
 class TeamsCoordinator: Coordinator {
     private let networking: Networking
-    private let database: AppDatabase
     private let userHelper: UserHelper
     
     weak var parentViewController: UIViewController?
@@ -24,14 +22,12 @@ class TeamsCoordinator: Coordinator {
     
     private lazy var teamViewModel: TeamsViewModel = {
         return TeamsViewModel(networking: self.networking,
-                              database: self.database,
                               userHelper: self.userHelper,
                               coordinator: self)
     }()
 
-    init(networking: Networking, database: AppDatabase, userHelper: UserHelper) {
+    init(networking: Networking, userHelper: UserHelper) {
         self.networking = networking
-        self.database = database
         self.userHelper = userHelper
     }
     

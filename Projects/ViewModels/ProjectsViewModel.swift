@@ -8,28 +8,25 @@
 
 import UIKit
 import Core
-import Database
 import Networking
 
 class ProjectsViewModel: NSObject {
-    private let networking: Networking
-    private let database: AppDatabase
+    
+    private let projectsService: ProjectsService
     private let userHelper: UserHelper
     private weak var coordinator: ProjectsCoordinator?
     
     var items: [Project]?
 
-    init(networking: Networking, database: AppDatabase, userHelper: UserHelper, coordinator: ProjectsCoordinator) {
-        self.networking = networking
-        self.database = database
+    init(networking: Networking, userHelper: UserHelper, coordinator: ProjectsCoordinator) {
         self.userHelper = userHelper
         self.coordinator = coordinator
+        
+        self.projectsService = ProjectsService(networking: networking)
     }
     
     func fetchProjects(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
-        let projectRepo = ProjectRepository(networking: self.networking, database: self.database)
-        
-        projectRepo.getProjects() { result in
+        projectsService.getProjects() { result in
             switch result {
             case .failure(let error):
                 completionHandler(Result.failure(error))
@@ -61,7 +58,7 @@ extension ProjectsViewModel: UITableViewDataSource {
         }
         
         cell!.textLabel?.text = project?.name
-        cell!.detailTextLabel?.text = "Team: \(project?.team?.name ?? "")"
+        cell!.detailTextLabel?.text = "Team: \(project?.team.name ?? "")"
         
         return cell!
     }
