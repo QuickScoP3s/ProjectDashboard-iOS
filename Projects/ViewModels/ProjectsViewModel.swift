@@ -16,7 +16,7 @@ class ProjectsViewModel: NSObject {
     private let userHelper: UserHelper
     private weak var coordinator: ProjectsCoordinator?
     
-    var items: [Project]?
+    var sections: [TeamSection]?
 
     init(networking: Networking, userHelper: UserHelper, coordinator: ProjectsCoordinator) {
         self.userHelper = userHelper
@@ -25,14 +25,16 @@ class ProjectsViewModel: NSObject {
         self.projectsService = ProjectsService(networking: networking)
     }
     
-    func fetchProjects(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
+    func fetchProjects(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) {
         projectsService.getProjects() { result in
             switch result {
             case .failure(let error):
                 completionHandler(Result.failure(error))
             case .success(let items):
-                self.items = items
-                completionHandler(Result.success(()))
+                self.sections = TeamSection.group(projects: items)
+                self.sections?.sort { (ls: TeamSection, rs) -> Bool in ls.projects[0].lastEdit > rs.projects[0].lastEdit }
+                
+                completionHandler(Result.success(items.count > 0))
             }
         }
     }
@@ -45,22 +47,35 @@ class ProjectsViewModel: NSObject {
 // MARK: - UITableViewDataSource
 
 extension ProjectsViewModel: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.sections?.count ?? 0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items?.count ?? 0
+        let teamSection = self.sections?[section]
+        return teamSection?.projects.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let section = self.sections?[section]
+        return section?.projects[0].team.name
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let project = items?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell", for: indexPath)
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell")
-        if (cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "ProjectCell")
+        let section = self.sections?[indexPath.section]
+        guard let project = section?.projects[indexPath.row] else {
+            return cell
         }
         
-        cell!.textLabel?.text = project?.name
-        cell!.detailTextLabel?.text = "Team: \(project?.team.name ?? "")"
+        let formatter = RelativeDateTimeFormatter()
+        let lastModified = formatter.localizedString(for: project.lastEdit, relativeTo: Date())
         
-        return cell!
+        cell.textLabel?.text = project.name
+        cell.detailTextLabel?.text = "Last Modified: \(lastModified)"
+        
+        return cell
     }
 }
 
@@ -70,7 +85,8 @@ extension ProjectsViewModel: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let project = items![indexPath.row]
+        let section = self.sections![indexPath.section]
+        let project = section.projects[indexPath.row]
         coordinator?.presentDetails(projectId: project.id)
     }
 }

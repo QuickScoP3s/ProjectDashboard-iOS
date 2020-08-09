@@ -75,7 +75,7 @@ class HomeCoordinator: Coordinator {
         tabBarController.viewControllers = controllers
         
         parentViewController?.present(tabBarController, animated: false)
-        presentProjects()
+        tabBarController.selectedIndex = 0
     }
     
     func presentProjects() {

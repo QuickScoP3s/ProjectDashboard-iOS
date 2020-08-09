@@ -8,9 +8,13 @@
 
 import UIKit
 import Components
+import Lottie
 
 class ProjectsViewController: UIViewController {
     private let viewModel: ProjectsViewModel
+    
+    private let animationStack = UIStackView()
+    private let animationView = AnimationView()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,7 +44,42 @@ class ProjectsViewController: UIViewController {
         tableView.dataSource = viewModel
         tableView.register(SubtitleCell.self, forCellReuseIdentifier: "ProjectCell")
         
+        prepareAnimationView()
         reloadProjects()
+    }
+    
+    private func prepareAnimationView() {
+        animationView.animation = Animation.named("EmptyList", bundle: Bundle.main)
+        animationView.loopMode = .loop
+        
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Whale Whale Whale\nNo projects eh"
+        label.textAlignment = .center
+        
+        animationStack.translatesAutoresizingMaskIntoConstraints = false
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        animationStack.axis = .vertical
+        animationStack.alignment = .fill
+        animationStack.distribution = .fillEqually
+        
+        animationStack.addSubview(animationView)
+        animationStack.addSubview(label)
+        view.addSubview(animationStack)
+        
+        animationStack.isHidden = true
+        animationStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        animationStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        animationView.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor).isActive = true
+        animationView.centerYAnchor.constraint(equalTo: animationStack.centerYAnchor).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        
+        label.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor).isActive = true
+        label.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -15).isActive = true
     }
     
     func reloadProjects() {
@@ -50,13 +89,28 @@ class ProjectsViewController: UIViewController {
             switch result {
                 case .failure(let error):
                     print("😓 \(error.localizedDescription)")
-                case .success:
+                case .success(let hasProjects):
                     DispatchQueue.main.async {
-                        self.tableView.reloadData()
+                        self.reloadData(showTable: hasProjects)
                     }
             }
 
             self.view.activityIndicator.stopAnimating()
+        }
+    }
+    
+    private func reloadData(showTable: Bool) {
+        if showTable {
+            tableView.isHidden = false
+            tableView.reloadData()
+            
+            animationView.stop()
+            animationStack.isHidden = true
+        }
+        else {
+            tableView.isHidden = true
+            animationStack.isHidden = false
+            animationView.play()
         }
     }
 }

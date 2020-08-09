@@ -7,13 +7,18 @@
 //
 
 import Core
+import Utils
 
 public class ProjectsService {
     private let baseUrl = "projects"
     private let networking: Networking
     
+    private let jsonDecoder: JSONDecoder
+    
     public init(networking: Networking) {
         self.networking = networking
+        self.jsonDecoder = JSONDecoder()
+        self.jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
     }
     
     // MARK: - API Calls
@@ -33,7 +38,7 @@ public class ProjectsService {
                 }
                 
                 do {
-                    let response = try JSONDecoder().decode([Project].self, from: data)
+                    let response = try self.jsonDecoder.decode([Project].self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {
@@ -56,7 +61,7 @@ public class ProjectsService {
                 guard let data = response?.data else { return }
                 
                 do {
-                    let response = try JSONDecoder().decode(Project.self, from: data)
+                    let response = try self.jsonDecoder.decode(Project.self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {
@@ -79,7 +84,7 @@ public class ProjectsService {
                 guard let data = response?.data else { return }
                 
                 do {
-                    let response = try JSONDecoder().decode(Project.self, from: data)
+                    let response = try self.jsonDecoder.decode(Project.self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {

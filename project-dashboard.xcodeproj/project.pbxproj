@@ -130,6 +130,10 @@
 		DA84E57823D4AB120053DD10 /* Projects.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA7C797423D4A4BB00D8A8A0 /* Projects.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA84E57B23D4AB120053DD10 /* Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7C796323D4A4B300D8A8A0 /* Teams.framework */; };
 		DA84E57C23D4AB120053DD10 /* Teams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA7C796323D4A4B300D8A8A0 /* Teams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DAB9A73724E035B8003A5218 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73624E035B8003A5218 /* EmptyList.json */; };
+		DAB9A73924E04579003A5218 /* NoTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73824E04579003A5218 /* NoTeams.json */; };
+		DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73A24E05359003A5218 /* DateFormatter.swift */; };
+		DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73C24E05476003A5218 /* TeamSection.swift */; };
 		DABC2F8323D4CF0100133EB8 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBC45C23D4CC030003FF5E /* ProjectsViewController.swift */; };
 		DAE979F623D49E8800F679B0 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE979F523D49E8800F679B0 /* Home.swift */; };
 		DAE979F823D49E9A00F679B0 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE979F723D49E9A00F679B0 /* HomeCoordinator.swift */; };
@@ -553,6 +557,10 @@
 		DA86793E23D0B4A60032E045 /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA86794223D0B4AF0032E045 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9C2C826AEADBF70BC64776 /* Pods-PodBase-Profile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodBase-Profile.release.xcconfig"; path = "Target Support Files/Pods-PodBase-Profile/Pods-PodBase-Profile.release.xcconfig"; sourceTree = "<group>"; };
+		DAB9A73624E035B8003A5218 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
+		DAB9A73824E04579003A5218 /* NoTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoTeams.json; sourceTree = "<group>"; };
+		DAB9A73A24E05359003A5218 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		DAB9A73C24E05476003A5218 /* TeamSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSection.swift; sourceTree = "<group>"; };
 		DABC2F8423D4CF3900133EB8 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		DABC2F8823D4D08000133EB8 /* TeamsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCoordinator.swift; sourceTree = "<group>"; };
 		DAE979F523D49E8800F679B0 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -837,6 +845,7 @@
 			isa = PBXGroup;
 			children = (
 				DA427A8A23B6136F00BFB0CE /* UserHelper.swift */,
+				DAB9A73C24E05476003A5218 /* TeamSection.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -887,6 +896,7 @@
 		DA42B58523B362A3008DC912 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DAB9A73524E034FE003A5218 /* Animations */,
 				DA42B57C23B361EF008DC912 /* LaunchScreen.storyboard */,
 				DA42B57A23B361EF008DC912 /* Assets.xcassets */,
 			);
@@ -970,6 +980,7 @@
 			isa = PBXGroup;
 			children = (
 				DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */,
+				DAB9A73A24E05359003A5218 /* DateFormatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1071,6 +1082,15 @@
 				DA84E58223D4AD410053DD10 /* TeamsView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DAB9A73524E034FE003A5218 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				DAB9A73824E04579003A5218 /* NoTeams.json */,
+				DAB9A73624E035B8003A5218 /* EmptyList.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		DAFBC45623D4B80D0003FF5E /* ViewModels */ = {
@@ -1498,7 +1518,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA42B57E23B361EF008DC912 /* LaunchScreen.storyboard in Resources */,
+				DAB9A73724E035B8003A5218 /* EmptyList.json in Resources */,
 				DA42B57B23B361EF008DC912 /* Assets.xcassets in Resources */,
+				DAB9A73924E04579003A5218 /* NoTeams.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1817,6 +1839,7 @@
 				DA182C9223D47FFF00245316 /* Response.swift in Sources */,
 				DA42B59C23B36372008DC912 /* Coordinator.swift in Sources */,
 				DA42B59E23B3639B008DC912 /* NetworkingProtocol.swift in Sources */,
+				DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */,
 				DA2D1E8B23D21ECE00D880EB /* AuthDTO.swift in Sources */,
 				DA1A6BC723D4ED03007E5260 /* ProjectDTO.swift in Sources */,
 				DA427A8523B414EE00BFB0CE /* User.swift in Sources */,
@@ -1843,6 +1866,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */,
 				DA4AC0A824DED3BF00C4D55B /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

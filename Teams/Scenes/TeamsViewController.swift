@@ -9,10 +9,12 @@
 import UIKit
 import LPSnackbar
 import Components
+import Lottie
 
 class TeamsViewController: UIViewController {
     private let viewModel: TeamsViewModel
     
+    private let animationView = AnimationView()
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Init
@@ -40,6 +42,18 @@ class TeamsViewController: UIViewController {
         tableView.delegate = viewModel
         tableView.dataSource = viewModel
         tableView.register(SubtitleCell.self, forCellReuseIdentifier: "TeamCell")
+        
+        animationView.animation = Animation.named("NoTeams", bundle: Bundle.main)
+        animationView.loopMode = .loop
+        animationView.translatesAutoresizingMaskIntoConstraints = false
+        
+        view.addSubview(animationView)
+        animationView.isHidden = true
+        
+        animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
         
         reloadTeams()
     }
@@ -73,13 +87,25 @@ class TeamsViewController: UIViewController {
             switch result {
             case .failure(let error):
                 print("😓 \(error.localizedDescription)")
-            case .success:
+            case .success(let hasTeams):
                 DispatchQueue.main.async {
-                    self.tableView.reloadData()
+                    self.reloadData(showEmpty: !hasTeams)
                 }
             }
             
             self.view.activityIndicator.stopAnimating()
+        }
+    }
+    
+    private func reloadData(showEmpty: Bool) {
+        if showEmpty {
+            animationView.isHidden = false
+            animationView.play()
+        }
+        else {
+            self.tableView.reloadData()
+            animationView.isHidden = true
+            animationView.stop()
         }
     }
 }

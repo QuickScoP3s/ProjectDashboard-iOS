@@ -24,14 +24,16 @@ class TeamsViewModel: NSObject {
         self.coordinator = coordinator
     }
     
-    func fetchTeams(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
+    func fetchTeams(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) {
         teamsService.getTeams() { result in
             switch result {
             case .failure(let error):
                 completionHandler(Result.failure(error))
             case .success(let items):
                 self.items = items
-                completionHandler(Result.success(()))
+                self.items?.sort { (lt: Team, rt: Team) -> Bool in lt.name < rt.name }
+                
+                completionHandler(Result.success(items.count > 0))
             }
         }
     }
@@ -60,18 +62,17 @@ extension TeamsViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let team = items?[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell", for: indexPath)
         
-        var cell = tableView.dequeueReusableCell(withIdentifier: "TeamCell")
-        if (cell == nil) {
-            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "TeamCell")
+        guard let team = items?[indexPath.row] else {
+            return cell
         }
         
-        cell!.textLabel?.text = team?.name
+        cell.textLabel?.text = team.name
         //cell!.detailTextLabel?.text = "Members: \((team?.memberIds.count ?? 0) + 1)" // count + 1 for leader (who's not included)
-        cell!.detailTextLabel?.text = "Members: 1"
+        cell.detailTextLabel?.text = "Members: 1"
         
-        return cell!
+        return cell
     }
 }
 

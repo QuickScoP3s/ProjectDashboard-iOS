@@ -12,8 +12,12 @@ public class TeamsService {
     private let baseUrl = "teams"
     private let networking: Networking
     
+    private let jsonDecoder: JSONDecoder
+    
     public init(networking: Networking) {
         self.networking = networking
+        self.jsonDecoder = JSONDecoder()
+        self.jsonDecoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
     }
     
     // MARK: - API Calls
@@ -33,7 +37,7 @@ public class TeamsService {
                 }
                 
                 do {
-                    let response = try JSONDecoder().decode([Team].self, from: data)
+                    let response = try self.jsonDecoder.decode([Team].self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {
@@ -58,7 +62,7 @@ public class TeamsService {
                 }
                 
                 do {
-                    let response = try JSONDecoder().decode(Team.self, from: data)
+                    let response = try self.jsonDecoder.decode(Team.self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {
@@ -83,7 +87,7 @@ public class TeamsService {
                 }
                 
                 do {
-                    let response = try JSONDecoder().decode(Team.self, from: data)
+                    let response = try self.jsonDecoder.decode(Team.self, from: data)
                     completionHandler(Result.success(response))
                 }
                 catch let error {
