@@ -1,15 +1,15 @@
 //
-//  HomeTabBarController.swift
-//  Home
+//  ProjectTabBarController.swift
+//  Projects
 //
-//  Created by Waut Wyffels on 19/01/2020.
+//  Created by Waut Wyffels on 10/08/2020.
 //  Copyright © 2020 Quick Development. All rights reserved.
 //
 
 import UIKit
 import Core
 
-class HomeTabBarController: UITabBarController {
+class ProjectTabBarController: UITabBarController {
     weak var tabDelegate: TabBarDelegate?
     
     override var selectedViewController: UIViewController? {

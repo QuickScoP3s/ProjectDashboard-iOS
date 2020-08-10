@@ -13,16 +13,13 @@ import Networking
 class ProjectsViewModel: NSObject {
     
     private let projectsService: ProjectsService
-    private let userHelper: UserHelper
     private weak var coordinator: ProjectsCoordinator?
     
     var sections: [TeamSection]?
 
-    init(networking: Networking, userHelper: UserHelper, coordinator: ProjectsCoordinator) {
-        self.userHelper = userHelper
-        self.coordinator = coordinator
-        
+    init(networking: Networking, coordinator: ProjectsCoordinator) {
         self.projectsService = ProjectsService(networking: networking)
+        self.coordinator = coordinator
     }
     
     func fetchProjects(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) {
@@ -87,6 +84,7 @@ extension ProjectsViewModel: UITableViewDelegate {
         
         let section = self.sections![indexPath.section]
         let project = section.projects[indexPath.row]
-        coordinator?.presentDetails(projectId: project.id)
+        
+        coordinator?.presentDetails(projectId: project.id, projectName: project.name)
     }
 }

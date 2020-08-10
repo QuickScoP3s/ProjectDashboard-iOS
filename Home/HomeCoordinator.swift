@@ -49,25 +49,27 @@ class HomeCoordinator: Coordinator {
     func start() {
         features = [projects, teams, profile]
         
+        // Define tabBarItems here, otherwise they won't be loaded
         let projectsController = projects.coordinator.rootViewController
         projectsController.tabBarItem = UITabBarItem(title: "Projects",
-                                                      image: UIImage(systemName: "bookmark"),
-                                                      selectedImage: UIImage(systemName: "bookmark.fill"))
+                                                     image: UIImage(systemName: "bookmark"),
+                                                     selectedImage: UIImage(systemName: "bookmark.fill"))
         
         let teamsController = teams.coordinator.rootViewController
         teamsController.tabBarItem = UITabBarItem(title: "Teams",
-                                                   image: UIImage(systemName: "person.3"),
-                                                   selectedImage: UIImage(systemName: "person.3.fill"))
+                                                  image: UIImage(systemName: "person.3"),
+                                                  selectedImage: UIImage(systemName: "person.3.fill"))
         
         let profileController = profile.coordinator.rootViewController
         profileController.tabBarItem = UITabBarItem(title: "Profile",
-                                                   image: UIImage(systemName: "person.circle"),
-                                                   selectedImage: UIImage(systemName: "person.circle.fill"))
+                                                    image: UIImage(systemName: "person.circle"),
+                                                    selectedImage: UIImage(systemName: "person.circle.fill"))
         
-        var controllers = [UIViewController]()
-        controllers.append(projectsController)
-        controllers.append(teamsController)
-        controllers.append(profileController)
+        let controllers: [UIViewController] = [
+            projectsController,
+            teamsController,
+            profileController
+        ]
         
         tabBarController.tabDelegate = self
         tabBarController.modalPresentationStyle = .fullScreen
@@ -76,12 +78,6 @@ class HomeCoordinator: Coordinator {
         
         parentViewController?.present(tabBarController, animated: false)
         tabBarController.selectedIndex = 0
-    }
-    
-    func presentProjects() {
-        DispatchQueue.main.async {
-            self.projects.start(on: self.tabBarController)
-        }
     }
 }
 

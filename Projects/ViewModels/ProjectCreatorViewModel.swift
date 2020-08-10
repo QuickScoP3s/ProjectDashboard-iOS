@@ -15,14 +15,12 @@ class ProjectCreatorViewModel: NSObject {
     
     private let teamsService: TeamsService
     private let projectsService: ProjectsService
-    private let userHelper: UserHelper
     private weak var coordinator: ProjectsCoordinator?
     
     var teams: [Team]?
     var selectedRow: Int = 0
 
-    init(networking: Networking, userHelper: UserHelper, coordinator: ProjectsCoordinator) {
-        self.userHelper = userHelper
+    init(networking: Networking, coordinator: ProjectsCoordinator) {
         self.coordinator = coordinator
         
         self.teamsService = TeamsService(networking: networking)
@@ -53,7 +51,7 @@ class ProjectCreatorViewModel: NSObject {
                 completionHandler(Result.success(()))
                 
                 self.coordinator?.refreshProjectsOverview()
-                self.coordinator?.presentDetails(projectId: item.id)
+                self.coordinator?.presentDetails(projectId: item.id, projectName: item.name)
             }
         }
     }

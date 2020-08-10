@@ -36,8 +36,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.title = "Profile"
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
         imgProfile.image = UIImage(named: "Profile")

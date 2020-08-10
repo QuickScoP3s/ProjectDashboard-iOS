@@ -24,6 +24,10 @@ abstract_target 'PodBase' do
 
   end
 
+  target 'ProjectDetails' do
+
+  end
+
   target 'Profile' do
 
   end

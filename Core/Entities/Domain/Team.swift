@@ -15,4 +15,6 @@ public class Team: Codable {
     
     public let leadId: Int
     public let lead: User
+    
+    public let members: [User]
 }

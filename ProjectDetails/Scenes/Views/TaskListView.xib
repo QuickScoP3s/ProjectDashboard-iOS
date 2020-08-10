@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListViewController" customModule="ProjectDetails" customModuleProvider="target">
+            <connections>
+                <outlet property="taskList" destination="vFs-mk-Q85" id="EXh-3W-ktH"/>
+                <outlet property="taskListSelector" destination="nuj-DV-Ppl" id="V69-c7-VS0"/>
+                <outlet property="view" destination="iN0-l3-epB" id="iuL-2Q-o84"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nuj-DV-Ppl" userLabel="Task List Selector">
+                    <rect key="frame" x="15" y="59" width="384" height="32"/>
+                    <segments>
+                        <segment title="TODO"/>
+                        <segment title="Finished"/>
+                    </segments>
+                </segmentedControl>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vFs-mk-Q85" userLabel="Task List">
+                    <rect key="frame" x="0.0" y="105" width="414" height="757"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nuj-DV-Ppl" secondAttribute="trailing" constant="15" id="1Ir-cY-5pX"/>
+                <constraint firstItem="nuj-DV-Ppl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="7XX-dg-0Bo"/>
+                <constraint firstItem="vFs-mk-Q85" firstAttribute="top" secondItem="nuj-DV-Ppl" secondAttribute="bottom" constant="15" id="9ud-jk-9VG"/>
+                <constraint firstItem="vFs-mk-Q85" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="QCk-TN-0Y8"/>
+                <constraint firstItem="nuj-DV-Ppl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="XIR-Cw-igx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vFs-mk-Q85" secondAttribute="trailing" id="rLR-0i-RH8"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vFs-mk-Q85" secondAttribute="bottom" id="sM6-xE-aiW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="145"/>
+        </view>
+    </objects>
+</document>

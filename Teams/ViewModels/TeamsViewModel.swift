@@ -69,8 +69,7 @@ extension TeamsViewModel: UITableViewDataSource {
         }
         
         cell.textLabel?.text = team.name
-        //cell!.detailTextLabel?.text = "Members: \((team?.memberIds.count ?? 0) + 1)" // count + 1 for leader (who's not included)
-        cell.detailTextLabel?.text = "Members: 1"
+        cell.detailTextLabel?.text = "Members: \(team.members.count + 1)" // count + 1 for leader (who's not included)
         
         return cell
     }
