@@ -17,12 +17,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doc.text.magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NuQ-Y1-crZ">
-                    <rect key="frame" x="87" y="229" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc.text.magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NuQ-Y1-crZ">
+                    <rect key="frame" x="182" y="423" width="50" height="51.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="NuQ-Y1-crZ" secondAttribute="height" multiplier="1:1" id="8mw-wg-qVO"/>
+                        <constraint firstAttribute="height" constant="50" id="mtb-G4-iY3"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="NuQ-Y1-crZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5jd-RY-qrJ"/>
+                <constraint firstItem="NuQ-Y1-crZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="yVH-Jr-Twb"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="139" y="145"/>
         </view>
