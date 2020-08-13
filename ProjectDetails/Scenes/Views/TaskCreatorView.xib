@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskCreatorViewController" customModule="ProjectDetails" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSave" destination="NNe-Es-Ppy" id="Ukh-UJ-gwH"/>
+                <outlet property="txtDescription" destination="9Yf-Ns-qd2" id="mdJ-9J-dcg"/>
+                <outlet property="txtTitle" destination="YEf-uu-lYI" id="nnv-u6-UlE"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3Qw-8F-kqz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-HJ-kpU">
+                    <rect key="frame" x="20" y="59" width="115" height="26"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YEf-uu-lYI" userLabel="Task Title">
+                    <rect key="frame" x="20" y="93" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task description (optional)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLA-gY-7Og">
+                    <rect key="frame" x="20" y="147" width="199" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Yf-Ns-qd2" userLabel="Task Description" customClass="KMPlaceholderTextView" customModule="KMPlaceholderTextView">
+                    <rect key="frame" x="15" y="176" width="384" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="Mhi-xx-nmO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Descibe the task"/>
+                    </userDefinedRuntimeAttributes>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NNe-Es-Ppy" customClass="RoundButton" customModule="Components">
+                    <rect key="frame" x="40" y="807" width="334" height="40"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="ZiT-Rx-PA6"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="Save Task">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9Yf-Ns-qd2" secondAttribute="trailing" constant="15" id="04e-bN-iHp"/>
+                <constraint firstItem="NNe-Es-Ppy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" constant="20" id="9in-6a-eXe"/>
+                <constraint firstItem="9Yf-Ns-qd2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="JH9-ys-T0G"/>
+                <constraint firstAttribute="trailingMargin" secondItem="NNe-Es-Ppy" secondAttribute="trailing" constant="20" id="JPU-s3-jA5"/>
+                <constraint firstItem="YEf-uu-lYI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="OUy-yv-NyV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="NNe-Es-Ppy" secondAttribute="bottom" constant="15" id="RgU-De-uKl"/>
+                <constraint firstItem="YEf-uu-lYI" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailingMargin" id="gzT-Gd-Wrr"/>
+                <constraint firstItem="HLA-gY-7Og" firstAttribute="top" secondItem="YEf-uu-lYI" secondAttribute="bottom" constant="20" id="m30-AP-7dH"/>
+                <constraint firstItem="YEf-uu-lYI" firstAttribute="top" secondItem="n9X-HJ-kpU" secondAttribute="bottom" constant="8" id="nU2-er-jQP"/>
+                <constraint firstItem="HLA-gY-7Og" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="oeO-mj-lEf"/>
+                <constraint firstItem="9Yf-Ns-qd2" firstAttribute="top" secondItem="HLA-gY-7Og" secondAttribute="bottom" constant="8" id="uDV-Nz-Ag9"/>
+                <constraint firstItem="n9X-HJ-kpU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="topMargin" constant="15" id="xQm-xJ-k83"/>
+                <constraint firstItem="n9X-HJ-kpU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leadingMargin" id="xad-Ap-f23"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="144.64285714285714"/>
+        </view>
+    </objects>
+</document>

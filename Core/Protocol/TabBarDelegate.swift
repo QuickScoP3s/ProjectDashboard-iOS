@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol TabBarDelegate: class {
-    func tabChanged(selectedIndex: Int)
+	func tabChanged(selectedIndex: Int)
 }

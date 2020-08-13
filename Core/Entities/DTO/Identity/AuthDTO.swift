@@ -7,8 +7,8 @@
 //
 
 public struct AuthDTO: Codable {
-    public let token: String
-    
-    // Base64 Encoded image
-    public let picture: String?
+	public let token: String
+	
+	// Base64 Encoded image
+	public let picture: String?
 }

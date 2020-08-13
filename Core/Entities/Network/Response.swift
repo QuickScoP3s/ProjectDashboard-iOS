@@ -10,25 +10,25 @@ import Foundation
 import Alamofire
 
 public struct Response {
-    public let request: Request
-    public let data: Data?
-    
-    // Alamofire Response: Only needed for NativeNetworking
-    public let AFResponse: AFDataResponse<Data>?
-    
-    public init(request: Request, data: Data? = nil, response: AFDataResponse<Data>? = nil) {
-        self.request = request
-        self.data = data
-        self.AFResponse = response
-    }
-    
-    public init(fromAFResponse response: AFDataResponse<Data>, request: Request) {
-        self.request = request
-        self.data = response.data
-        self.AFResponse = response
-    }
-    
-    public var statusCode: Int? {
-        return AFResponse?.response?.statusCode
-    }
+	public let request: Request
+	public let data: Data?
+	
+	// Alamofire Response: Only needed for NativeNetworking
+	public let AFResponse: AFDataResponse<Data>?
+	
+	public init(request: Request, data: Data? = nil, response: AFDataResponse<Data>? = nil) {
+		self.request = request
+		self.data = data
+		self.AFResponse = response
+	}
+	
+	public init(fromAFResponse response: AFDataResponse<Data>, request: Request) {
+		self.request = request
+		self.data = response.data
+		self.AFResponse = response
+	}
+	
+	public var statusCode: Int? {
+		return AFResponse?.response?.statusCode
+	}
 }

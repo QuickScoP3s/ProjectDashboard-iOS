@@ -9,15 +9,13 @@
 import Foundation
 
 public class Project: Codable {
-    
-    public let id: Int
-    public let name: String
-    
-    public let teamId: Int
-    public let team: Team
-    
-    public let lastEdit: Date
-    public let contactPerson: ContactInfo
-    
-    public let tasks: [ProjectTask]
+	
+	public let id: Int
+	public let name: String
+	
+	public let teamId: Int
+	public let team: Team
+	
+	public let lastEdit: Date
+	public let contactPerson: ContactInfo
 }

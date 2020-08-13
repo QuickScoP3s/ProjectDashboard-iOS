@@ -7,12 +7,13 @@
 //
 
 public class ProjectTask: Codable {
-    
-    public let title: String
-    public let description: String
-    
-    public init(title: String, description: String = "") {
-        self.title = title
-        self.description = description
-    }
+	
+	public let id: Int
+	public let title: String
+	public let description: String
+	
+	public let assigneeId: Int?
+	public let assignee: User?
+	
+	public var isCompleted: Bool
 }

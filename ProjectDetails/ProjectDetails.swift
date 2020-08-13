@@ -10,17 +10,17 @@ import UIKit
 import Core
 
 public class ProjectDetails: Feature {
-    private let projectDetailsCoord: ProjectDetailsCoordinator
-    public var coordinator: Coordinator {
-        return projectDetailsCoord
-    }
-
-    public init(projectId: Int, projectName: String, networking: Core.Networking, userHelper: UserHelper) {
-        self.projectDetailsCoord = ProjectDetailsCoordinator(projectId: projectId, projectName: projectName, networking: networking, userHelper: userHelper)
-    }
-    
-    public func start(on viewcontroller: UIViewController?) {
-        projectDetailsCoord.parentViewController = viewcontroller
-        coordinator.start()
-    }
+	private let projectDetailsCoord: ProjectDetailsCoordinator
+	public var coordinator: Coordinator {
+		return projectDetailsCoord
+	}
+	
+	public init(projectId: Int, projectName: String, networking: Core.Networking, userHelper: UserHelper) {
+		self.projectDetailsCoord = ProjectDetailsCoordinator(projectId: projectId, projectName: projectName, networking: networking, userHelper: userHelper)
+	}
+	
+	public func start(on viewcontroller: UIViewController?) {
+		projectDetailsCoord.parentViewController = viewcontroller
+		coordinator.start()
+	}
 }

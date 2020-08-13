@@ -9,7 +9,7 @@
 import UIKit
 
 public protocol Feature {
-    var coordinator: Coordinator { get }
-    
-    func start(on viewcontroller: UIViewController?)
+	var coordinator: Coordinator { get }
+	
+	func start(on viewcontroller: UIViewController?)
 }

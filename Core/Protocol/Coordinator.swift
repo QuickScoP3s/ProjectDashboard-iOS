@@ -11,16 +11,16 @@ import UIKit
 
 // Delegate: Contains callback function passed via a variable.
 public protocol CoordinatorDelegate: class {
-    func didFinish(coordintor: Coordinator)
+	func didFinish(coordintor: Coordinator)
 }
 
 public protocol Coordinator: class {
-    var rootViewController: UIViewController { get }
-    
-    func start()
+	var rootViewController: UIViewController { get }
+	
+	func start()
 }
 
 // Used for popup controllers: Call close to hide the popup
 public protocol ViewControllerDelegate: class {
-    func close()
+	func close()
 }

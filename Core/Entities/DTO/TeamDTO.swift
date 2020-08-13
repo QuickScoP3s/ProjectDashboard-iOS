@@ -9,14 +9,12 @@
 import Foundation
 
 public struct TeamDTO: Codable {
- 
-    public let id: Int
-    public let name: String
-    public let leadId: Int
-    
-    public init(id: Int = 0, name: String, leadId: Int) {
-        self.id = id
-        self.name = name
-        self.leadId = leadId
-    }
+	
+	public let name: String
+	public let leadId: Int
+	
+	public init(name: String, leadId: Int) {
+		self.name = name
+		self.leadId = leadId
+	}
 }

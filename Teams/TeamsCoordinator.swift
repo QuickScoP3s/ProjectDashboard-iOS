@@ -10,29 +10,29 @@ import UIKit
 import Core
 
 class TeamsCoordinator: Coordinator {
-    private let networking: Networking
-    private let userHelper: UserHelper
-    
-    weak var parentViewController: UIViewController?
-    
-    private let navController = UINavigationController()
-    var rootViewController: UIViewController {
-        return navController
-    }
-    
-    private lazy var teamViewModel: TeamsViewModel = {
-        return TeamsViewModel(networking: self.networking,
-                              userHelper: self.userHelper,
-                              coordinator: self)
-    }()
-
-    init(networking: Networking, userHelper: UserHelper) {
-        self.networking = networking
-        self.userHelper = userHelper
-    }
-    
-    func start() {
-        let viewController = TeamsViewController(viewModel: self.teamViewModel)
-        navController.viewControllers = [viewController] // Set viewcontroller as first and only controller in the stack
-    }
+	private let networking: Networking
+	private let userHelper: UserHelper
+	
+	weak var parentViewController: UIViewController?
+	
+	private let navController = UINavigationController()
+	var rootViewController: UIViewController {
+		return navController
+	}
+	
+	private lazy var teamViewModel: TeamsViewModel = {
+		return TeamsViewModel(networking: self.networking,
+									 userHelper: self.userHelper,
+									 coordinator: self)
+	}()
+	
+	init(networking: Networking, userHelper: UserHelper) {
+		self.networking = networking
+		self.userHelper = userHelper
+	}
+	
+	func start() {
+		let viewController = TeamsViewController(viewModel: self.teamViewModel)
+		navController.viewControllers = [viewController] // Set viewcontroller as first and only controller in the stack
+	}
 }

@@ -9,12 +9,12 @@
 import Foundation
 
 public class Team: Codable {
-    
-    public let id: Int
-    public let name: String
-    
-    public let leadId: Int
-    public let lead: User
-    
-    public let members: [User]
+	
+	public let id: Int
+	public let name: String
+	
+	public let leadId: Int
+	public let lead: User
+	
+	public let members: [User]
 }

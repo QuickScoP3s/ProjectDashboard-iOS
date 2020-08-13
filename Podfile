@@ -2,49 +2,51 @@ project "project-dashboard.xcodeproj"
 use_frameworks! 
 
 abstract_target 'PodBase' do
-  pod 'JWTDecode'
-  pod 'Alamofire', '~> 5.0.0-rc.2'
-  pod 'AlamofireNetworkActivityLogger', '~> 3.0'
-  pod 'LPSnackbar'
-  pod 'lottie-ios'
+	pod 'JWTDecode'
+	pod 'Alamofire', '~> 5.0.0-rc.2'
+	pod 'AlamofireNetworkActivityLogger', '~> 3.0'
+	pod 'IQKeyboardManagerSwift'
+	pod 'LPSnackbar'
+	pod 'KMPlaceholderTextView', '~> 1.4.0'
+	pod 'lottie-ios'
 
-  target 'Auth' do
+	target 'Auth' do
 
-  end
+	end
 
-  target 'Home' do
+	target 'Home' do
 
-  end
+	end
 
-  target 'Teams' do
+	target 'Teams' do
 
-  end
+	end
 
-  target 'Projects' do
+	target 'Projects' do
 
-  end
+	end
 
-  target 'ProjectDetails' do
+	target 'ProjectDetails' do
 
-  end
+	end
 
-  target 'Profile' do
+	target 'Profile' do
 
-  end
+	end
 
-  target 'Core' do
+	target 'Core' do
 
-  end
+	end
 
-  target 'Utils' do
+	target 'Utils' do
 
-  end
+	end
 
-  target 'Networking' do
+	target 'Networking' do
 
-  end
+	end
 
-  target 'project-dashboard' do
+	target 'project-dashboard' do
 
-  end
+	end
 end

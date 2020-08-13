@@ -7,16 +7,16 @@
 //
 
 public struct ContactInfo: Codable {
-    
-    public let firstName: String
-    public let lastName: String
-    public let email: String
-    public let phoneNumber: String
-    
-    public init(firstName: String, lastName: String, email: String, phoneNumber: String) {
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
-        self.phoneNumber = phoneNumber
-    }
+	
+	public let firstName: String
+	public let lastName: String
+	public let email: String
+	public let phoneNumber: String
+	
+	public init(firstName: String, lastName: String, email: String, phoneNumber: String) {
+		self.firstName = firstName
+		self.lastName = lastName
+		self.email = email
+		self.phoneNumber = phoneNumber
+	}
 }

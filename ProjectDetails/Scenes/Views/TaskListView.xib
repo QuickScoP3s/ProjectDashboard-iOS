@@ -9,8 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListViewController" customModule="ProjectDetails" customModuleProvider="target">
             <connections>
-                <outlet property="taskList" destination="vFs-mk-Q85" id="EXh-3W-ktH"/>
-                <outlet property="taskListSelector" destination="nuj-DV-Ppl" id="V69-c7-VS0"/>
+                <outlet property="taskList" destination="vFs-mk-Q85" id="Hdo-8l-bSj"/>
+                <outlet property="taskListSelector" destination="nuj-DV-Ppl" id="xXA-nJ-WXr"/>
                 <outlet property="view" destination="iN0-l3-epB" id="iuL-2Q-o84"/>
             </connections>
         </placeholder>

@@ -67,7 +67,7 @@
 		DA42B59423B36331008DC912 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; };
 		DA42B59523B36331008DC912 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA42B59C23B36372008DC912 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B59B23B36372008DC912 /* Coordinator.swift */; };
-		DA42B59E23B3639B008DC912 /* NetworkingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B59D23B3639B008DC912 /* NetworkingProtocol.swift */; };
+		DA42B59E23B3639B008DC912 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B59D23B3639B008DC912 /* Networking.swift */; };
 		DA42B5A023B363C1008DC912 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B59F23B363C1008DC912 /* Feature.swift */; };
 		DA42B5A323B3640A008DC912 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5A223B3640A008DC912 /* Request.swift */; };
 		DA42B5AF23B3671E008DC912 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = DA42B5AD23B3671E008DC912 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,7 +75,6 @@
 		DA42B5B323B3671E008DC912 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B5AB23B3671E008DC912 /* Networking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA42B5BA23B36830008DC912 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; };
 		DA42B5BB23B36830008DC912 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA42B5C023B3686B008DC912 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5BF23B3686B008DC912 /* NetworkError.swift */; };
 		DA42B5C223B368D0008DC912 /* NativeNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA42B5C123B368D0008DC912 /* NativeNetworking.swift */; };
 		DA4AC09424DEC93500C4D55B /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */; };
 		DA4AC09E24DED35A00C4D55B /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4AC09C24DED35A00C4D55B /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -129,7 +128,6 @@
 		DA84E57B23D4AB120053DD10 /* Teams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7C796323D4A4B300D8A8A0 /* Teams.framework */; };
 		DA84E57C23D4AB120053DD10 /* Teams.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA7C796323D4A4B300D8A8A0 /* Teams.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA85583D24E1477600F2EDA9 /* TabBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85583C24E1477600F2EDA9 /* TabBarDelegate.swift */; };
-		DA85584C24E14C3700F2EDA9 /* ProjectDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = DA85584A24E14C3700F2EDA9 /* ProjectDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA85584F24E14C3700F2EDA9 /* ProjectDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA85584824E14C3700F2EDA9 /* ProjectDetails.framework */; };
 		DA85585024E14C3700F2EDA9 /* ProjectDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA85584824E14C3700F2EDA9 /* ProjectDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA85585424E14C6E00F2EDA9 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1D3B5123D1DA64001043BE /* Components.framework */; platformFilter = ios; };
@@ -138,8 +136,6 @@
 		DA85585924E14C6E00F2EDA9 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B58D23B36331008DC912 /* Core.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA85585D24E14C7E00F2EDA9 /* Networking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B5AB23B3671E008DC912 /* Networking.framework */; platformFilter = ios; };
 		DA85585E24E14C7E00F2EDA9 /* Networking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA42B5AB23B3671E008DC912 /* Networking.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DA85586124E14CB300F2EDA9 /* ProjectDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85583E24E148A800F2EDA9 /* ProjectDetailsCoordinator.swift */; };
-		DA85586224E14CB300F2EDA9 /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85584124E14BD000F2EDA9 /* ProjectDetails.swift */; };
 		DA85586624E14D5D00F2EDA9 /* ProjectDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA85584824E14C3700F2EDA9 /* ProjectDetails.framework */; };
 		DA85586724E14D5D00F2EDA9 /* ProjectDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DA85584824E14C3700F2EDA9 /* ProjectDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DA85586B24E1501A00F2EDA9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85586A24E1501A00F2EDA9 /* TaskListViewController.swift */; };
@@ -149,6 +145,14 @@
 		DA85587224E16CE600F2EDA9 /* ProjectPropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA85587124E16CE600F2EDA9 /* ProjectPropertiesView.xib */; };
 		DA85587424E1EC6100F2EDA9 /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85587324E1EC6100F2EDA9 /* TaskListViewModel.swift */; };
 		DA85587624E1F8F300F2EDA9 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85587524E1F8F300F2EDA9 /* UIColor.swift */; };
+		DAA9CB9424E2B49F0043253E /* TasksService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CB9324E2B49F0043253E /* TasksService.swift */; };
+		DAA9CB9724E2BBEB0043253E /* TaskCreatorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DAA9CB9524E2BBEB0043253E /* TaskCreatorView.xib */; };
+		DAA9CB9924E2C06A0043253E /* TaskCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CB9824E2C06A0043253E /* TaskCreatorViewController.swift */; };
+		DAA9CB9B24E2C0FC0043253E /* ProjectDetails.h in Headers */ = {isa = PBXBuildFile; fileRef = DA85584A24E14C3700F2EDA9 /* ProjectDetails.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DAA9CB9D24E2C0FC0043253E /* ProjectDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85584124E14BD000F2EDA9 /* ProjectDetails.swift */; };
+		DAA9CB9E24E2C0FC0043253E /* ProjectDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85583E24E148A800F2EDA9 /* ProjectDetailsCoordinator.swift */; };
+		DAA9CBA024E56D1D0043253E /* TaskCreatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CB9F24E56D1D0043253E /* TaskCreatorViewModel.swift */; };
+		DAA9CBA224E57AAA0043253E /* ProjectTaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA124E57AAA0043253E /* ProjectTaskDTO.swift */; };
 		DAB9A73724E035B8003A5218 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73624E035B8003A5218 /* EmptyList.json */; };
 		DAB9A73924E04579003A5218 /* NoTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73824E04579003A5218 /* NoTeams.json */; };
 		DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73A24E05359003A5218 /* DateFormatter.swift */; };
@@ -552,7 +556,7 @@
 		DA1A6BBC23D4DF9A007E5260 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		DA1A6BBE23D4DFDF007E5260 /* ProfileView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileView.xib; sourceTree = "<group>"; };
 		DA1A6BC023D4E3E0007E5260 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		DA1A6BC223D4EB77007E5260 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; };
+		DA1A6BC223D4EB77007E5260 /* ProjectsViewModel.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = ProjectsViewModel.swift; sourceTree = "<group>"; tabWidth = 3; usesTabs = 1; };
 		DA1A6BC423D4EC6E007E5260 /* ProjectsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsService.swift; sourceTree = "<group>"; };
 		DA1A6BC623D4ED03007E5260 /* ProjectDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDTO.swift; sourceTree = "<group>"; };
 		DA1A6BE523D50081007E5260 /* TeamsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsService.swift; sourceTree = "<group>"; };
@@ -584,13 +588,12 @@
 		DA42B58F23B36331008DC912 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		DA42B59023B36331008DC912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA42B59B23B36372008DC912 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		DA42B59D23B3639B008DC912 /* NetworkingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocol.swift; sourceTree = "<group>"; };
+		DA42B59D23B3639B008DC912 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		DA42B59F23B363C1008DC912 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
 		DA42B5A223B3640A008DC912 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		DA42B5AB23B3671E008DC912 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA42B5AD23B3671E008DC912 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
 		DA42B5AE23B3671E008DC912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA42B5BF23B3686B008DC912 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		DA42B5C123B368D0008DC912 /* NativeNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeNetworking.swift; sourceTree = "<group>"; };
 		DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		DA4AC09A24DED35A00C4D55B /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -639,6 +642,11 @@
 		DA86793E23D0B4A60032E045 /* JWTDecode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA86794223D0B4AF0032E045 /* SQLite.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SQLite.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9C2C826AEADBF70BC64776 /* Pods-PodBase-Profile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodBase-Profile.release.xcconfig"; path = "Target Support Files/Pods-PodBase-Profile/Pods-PodBase-Profile.release.xcconfig"; sourceTree = "<group>"; };
+		DAA9CB9324E2B49F0043253E /* TasksService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksService.swift; sourceTree = "<group>"; };
+		DAA9CB9524E2BBEB0043253E /* TaskCreatorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCreatorView.xib; sourceTree = "<group>"; };
+		DAA9CB9824E2C06A0043253E /* TaskCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreatorViewController.swift; sourceTree = "<group>"; };
+		DAA9CB9F24E56D1D0043253E /* TaskCreatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreatorViewModel.swift; sourceTree = "<group>"; };
+		DAA9CBA124E57AAA0043253E /* ProjectTaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskDTO.swift; sourceTree = "<group>"; };
 		DAB9A73624E035B8003A5218 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
 		DAB9A73824E04579003A5218 /* NoTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoTeams.json; sourceTree = "<group>"; };
 		DAB9A73A24E05359003A5218 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -883,6 +891,7 @@
 			children = (
 				DA2D1E8923D21EBA00D880EB /* Identity */,
 				DA1A6BC623D4ED03007E5260 /* ProjectDTO.swift */,
+				DAA9CBA124E57AAA0043253E /* ProjectTaskDTO.swift */,
 				DA4AC0B124E01F4A00C4D55B /* TeamDTO.swift */,
 			);
 			path = DTO;
@@ -921,6 +930,7 @@
 				DA427A7823B409CF00BFB0CE /* AuthService.swift */,
 				DA1A6BC423D4EC6E007E5260 /* ProjectsService.swift */,
 				DA1A6BE523D50081007E5260 /* TeamsService.swift */,
+				DAA9CB9324E2B49F0043253E /* TasksService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -982,9 +992,9 @@
 		DA42B57023B361EE008DC912 /* project-dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				DA42B57123B361EE008DC912 /* AppDelegate.swift */,
-				DA42B58623B36307008DC912 /* AppCoordinator.swift */,
 				DA42B57F23B361EF008DC912 /* Info.plist */,
+				DA42B58623B36307008DC912 /* AppCoordinator.swift */,
+				DA42B57123B361EE008DC912 /* AppDelegate.swift */,
 				DA42B58523B362A3008DC912 /* Resources */,
 			);
 			path = "project-dashboard";
@@ -1003,11 +1013,11 @@
 		DA42B58E23B36331008DC912 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				DA427A8923B6134400BFB0CE /* Data */,
-				DA42B59A23B36361008DC912 /* Protocol */,
-				DA42B5A123B363F4008DC912 /* Entities */,
 				DA42B58F23B36331008DC912 /* Core.h */,
 				DA42B59023B36331008DC912 /* Info.plist */,
+				DA427A8923B6134400BFB0CE /* Data */,
+				DA42B5A123B363F4008DC912 /* Entities */,
+				DA42B59A23B36361008DC912 /* Protocol */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1016,7 +1026,7 @@
 			isa = PBXGroup;
 			children = (
 				DA42B59B23B36372008DC912 /* Coordinator.swift */,
-				DA42B59D23B3639B008DC912 /* NetworkingProtocol.swift */,
+				DA42B59D23B3639B008DC912 /* Networking.swift */,
 				DA42B59F23B363C1008DC912 /* Feature.swift */,
 				DA85583C24E1477600F2EDA9 /* TabBarDelegate.swift */,
 			);
@@ -1036,11 +1046,10 @@
 		DA42B5AC23B3671E008DC912 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				DA427A7723B409B900BFB0CE /* Services */,
-				DA42B5BF23B3686B008DC912 /* NetworkError.swift */,
-				DA42B5C123B368D0008DC912 /* NativeNetworking.swift */,
 				DA42B5AD23B3671E008DC912 /* Networking.h */,
 				DA42B5AE23B3671E008DC912 /* Info.plist */,
+				DA42B5C123B368D0008DC912 /* NativeNetworking.swift */,
+				DA427A7723B409B900BFB0CE /* Services */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1068,9 +1077,9 @@
 		DA4AC09B24DED35A00C4D55B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AC0A624DED3A900C4D55B /* Extensions */,
 				DA4AC09C24DED35A00C4D55B /* Utils.h */,
 				DA4AC09D24DED35A00C4D55B /* Info.plist */,
+				DA4AC0A624DED3A900C4D55B /* Extensions */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1078,9 +1087,9 @@
 		DA4AC0A624DED3A900C4D55B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */,
 				DAB9A73A24E05359003A5218 /* DateFormatter.swift */,
 				DA85587524E1F8F300F2EDA9 /* UIColor.swift */,
+				DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1088,12 +1097,12 @@
 		DA6948C223B3FE1F00298E8D /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				DA6948C323B3FE1F00298E8D /* Auth.h */,
+				DA6948C423B3FE1F00298E8D /* Info.plist */,
 				DA6948CD23B3FE3900298E8D /* Auth.swift */,
 				DA6948D423B3FEEB00298E8D /* AuthCoordinator.swift */,
 				DA6948D623B3FF3000298E8D /* Scenes */,
 				DA427A7423B405F300BFB0CE /* ViewModels */,
-				DA6948C323B3FE1F00298E8D /* Auth.h */,
-				DA6948C423B3FE1F00298E8D /* Info.plist */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -1111,11 +1120,11 @@
 		DA74791023D49DF900117CA4 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DA74791123D49DF900117CA4 /* Home.h */,
+				DA74791223D49DF900117CA4 /* Info.plist */,
 				DAE979F523D49E8800F679B0 /* Home.swift */,
 				DAE979F723D49E9A00F679B0 /* HomeCoordinator.swift */,
 				DA1A6BB323D4D9C8007E5260 /* HomeTabBarController.swift */,
-				DA74791123D49DF900117CA4 /* Home.h */,
-				DA74791223D49DF900117CA4 /* Info.plist */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1123,12 +1132,12 @@
 		DA7C796423D4A4B300D8A8A0 /* Teams */ = {
 			isa = PBXGroup;
 			children = (
+				DA7C796523D4A4B300D8A8A0 /* Teams.h */,
+				DA7C796623D4A4B300D8A8A0 /* Info.plist */,
 				DA84E56D23D4AA7B0053DD10 /* Teams.swift */,
 				DABC2F8823D4D08000133EB8 /* TeamsCoordinator.swift */,
 				DA84E57123D4AACE0053DD10 /* Scenes */,
 				DA84E57223D4AAD80053DD10 /* ViewModels */,
-				DA7C796523D4A4B300D8A8A0 /* Teams.h */,
-				DA7C796623D4A4B300D8A8A0 /* Info.plist */,
 			);
 			path = Teams;
 			sourceTree = "<group>";
@@ -1149,12 +1158,12 @@
 		DA7C798623D4A4C100D8A8A0 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				DA7C798723D4A4C100D8A8A0 /* Profile.h */,
+				DA7C798823D4A4C100D8A8A0 /* Info.plist */,
 				DA1A6BB523D4DE4F007E5260 /* Profile.swift */,
 				DA1A6BB723D4DE7C007E5260 /* ProfileCoordinator.swift */,
 				DA1A6BBA23D4DF82007E5260 /* Scenes */,
 				DA1A6BB923D4DF7A007E5260 /* ViewModels */,
-				DA7C798723D4A4C100D8A8A0 /* Profile.h */,
-				DA7C798823D4A4C100D8A8A0 /* Info.plist */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -1201,9 +1210,10 @@
 			isa = PBXGroup;
 			children = (
 				DA85586524E14CED00F2EDA9 /* Views */,
-				DA85583A24E146B800F2EDA9 /* ProjectTabBarController.swift */,
-				DA85586A24E1501A00F2EDA9 /* TaskListViewController.swift */,
 				DA85586F24E16CC200F2EDA9 /* ProjectPropertiesViewController.swift */,
+				DA85583A24E146B800F2EDA9 /* ProjectTabBarController.swift */,
+				DAA9CB9824E2C06A0043253E /* TaskCreatorViewController.swift */,
+				DA85586A24E1501A00F2EDA9 /* TaskListViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1211,6 +1221,7 @@
 		DA85586424E14CD700F2EDA9 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DAA9CB9F24E56D1D0043253E /* TaskCreatorViewModel.swift */,
 				DA85587324E1EC6100F2EDA9 /* TaskListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -1219,8 +1230,9 @@
 		DA85586524E14CED00F2EDA9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DA85586D24E15DE100F2EDA9 /* TaskListView.xib */,
 				DA85587124E16CE600F2EDA9 /* ProjectPropertiesView.xib */,
+				DAA9CB9524E2BBEB0043253E /* TaskCreatorView.xib */,
+				DA85586D24E15DE100F2EDA9 /* TaskListView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1237,8 +1249,8 @@
 		DAFBC45623D4B80D0003FF5E /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				DA1A6BC223D4EB77007E5260 /* ProjectsViewModel.swift */,
 				DA4AC0AF24E0067000C4D55B /* ProjectCreatorViewModel.swift */,
+				DA1A6BC223D4EB77007E5260 /* ProjectsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1247,8 +1259,8 @@
 			isa = PBXGroup;
 			children = (
 				DA1A6BAE23D4D3F1007E5260 /* Views */,
-				DAFBC45C23D4CC030003FF5E /* ProjectsViewController.swift */,
 				DA4AC0AD24DF14D900C4D55B /* ProjectCreatorViewController.swift */,
+				DAFBC45C23D4CC030003FF5E /* ProjectsViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1345,7 +1357,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA85584C24E14C3700F2EDA9 /* ProjectDetails.h in Headers */,
+				DAA9CB9B24E2C0FC0043253E /* ProjectDetails.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1769,6 +1781,7 @@
 			files = (
 				DA85586E24E15DE100F2EDA9 /* TaskListView.xib in Resources */,
 				DA85587224E16CE600F2EDA9 /* ProjectPropertiesView.xib in Resources */,
+				DAA9CB9724E2BBEB0043253E /* TaskCreatorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2046,10 +2059,11 @@
 				DA75C43523D09397007D10FF /* ContractInfo.swift in Sources */,
 				DA182C9223D47FFF00245316 /* Response.swift in Sources */,
 				DA42B59C23B36372008DC912 /* Coordinator.swift in Sources */,
-				DA42B59E23B3639B008DC912 /* NetworkingProtocol.swift in Sources */,
+				DA42B59E23B3639B008DC912 /* Networking.swift in Sources */,
 				DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */,
 				DA2D1E8B23D21ECE00D880EB /* AuthDTO.swift in Sources */,
 				DA1A6BC723D4ED03007E5260 /* ProjectDTO.swift in Sources */,
+				DAA9CBA224E57AAA0043253E /* ProjectTaskDTO.swift in Sources */,
 				DA427A8523B414EE00BFB0CE /* User.swift in Sources */,
 				DA427A8723B414EE00BFB0CE /* ProjectTask.swift in Sources */,
 				DA427A8823B414EE00BFB0CE /* Team.swift in Sources */,
@@ -2063,9 +2077,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A6BE623D50081007E5260 /* TeamsService.swift in Sources */,
-				DA42B5C023B3686B008DC912 /* NetworkError.swift in Sources */,
 				DA1A6BC523D4EC6E007E5260 /* ProjectsService.swift in Sources */,
 				DA42B5C223B368D0008DC912 /* NativeNetworking.swift in Sources */,
+				DAA9CB9424E2B49F0043253E /* TasksService.swift in Sources */,
 				DA427A7923B409CF00BFB0CE /* AuthService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2142,12 +2156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA85586224E14CB300F2EDA9 /* ProjectDetails.swift in Sources */,
 				DA85587024E16CC200F2EDA9 /* ProjectPropertiesViewController.swift in Sources */,
-				DA85586124E14CB300F2EDA9 /* ProjectDetailsCoordinator.swift in Sources */,
+				DAA9CB9924E2C06A0043253E /* TaskCreatorViewController.swift in Sources */,
 				DA85586B24E1501A00F2EDA9 /* TaskListViewController.swift in Sources */,
 				DA85586C24E153B800F2EDA9 /* ProjectTabBarController.swift in Sources */,
+				DAA9CBA024E56D1D0043253E /* TaskCreatorViewModel.swift in Sources */,
+				DAA9CB9D24E2C0FC0043253E /* ProjectDetails.swift in Sources */,
 				DA85587424E1EC6100F2EDA9 /* TaskListViewModel.swift in Sources */,
+				DAA9CB9E24E2C0FC0043253E /* ProjectDetailsCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

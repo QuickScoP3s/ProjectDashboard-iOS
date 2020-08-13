@@ -11,17 +11,17 @@ import Core
 import Networking
 
 class RegisterViewModel {
-    private let service: AuthService
-    private let userHelper: UserHelper
-    private weak var coordinator: AuthCoordinator?
-    
-    init(networking: Networking, userHelper: UserHelper, coordinator: AuthCoordinator) {
-        self.service = AuthService(networking: networking)
-        self.userHelper = userHelper
-        self.coordinator = coordinator
-    }
-    
-    func register(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
-        //TODO Call networkservice
-    }
+	private let service: AuthService
+	private let userHelper: UserHelper
+	private weak var coordinator: AuthCoordinator?
+	
+	init(networking: Networking, userHelper: UserHelper, coordinator: AuthCoordinator) {
+		self.service = AuthService(networking: networking)
+		self.userHelper = userHelper
+		self.coordinator = coordinator
+	}
+	
+	func register(completionHandler: @escaping ((Result<Void, Error>) -> Void)) {
+		//TODO Call networkservice
+	}
 }

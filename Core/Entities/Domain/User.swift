@@ -9,19 +9,19 @@
 import UIKit
 
 public struct User: Codable {
-    
-    public let id: Int
-    public var picture: String?
-    public let firstName: String
-    public let lastName: String
-    public let email: String
-    public let phoneNumber: String
-    
-    public var UIPicture: UIImage? {
-        if picture != nil {
-            return UserPictureHelper.DecodeImage(base64String: self.picture!)
-        }
-        
-        return nil
-    }
+	
+	public let id: Int
+	public var picture: String?
+	public let firstName: String
+	public let lastName: String
+	public let email: String
+	public let phoneNumber: String
+	
+	public var UIPicture: UIImage? {
+		if picture != nil {
+			return UserPictureHelper.DecodeImage(base64String: self.picture!)
+		}
+		
+		return nil
+	}
 }

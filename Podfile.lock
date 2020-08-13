@@ -2,14 +2,18 @@ PODS:
   - Alamofire (5.0.5)
   - AlamofireNetworkActivityLogger (3.0.0):
     - Alamofire (~> 5.0.0-rc.2)
+  - IQKeyboardManagerSwift (6.5.6)
   - JWTDecode (2.4.1)
+  - KMPlaceholderTextView (1.4.0)
   - lottie-ios (3.1.8)
   - LPSnackbar (3.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.2)
   - AlamofireNetworkActivityLogger (~> 3.0)
+  - IQKeyboardManagerSwift
   - JWTDecode
+  - KMPlaceholderTextView (~> 1.4.0)
   - lottie-ios
   - LPSnackbar
 
@@ -17,17 +21,21 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireNetworkActivityLogger
+    - IQKeyboardManagerSwift
     - JWTDecode
+    - KMPlaceholderTextView
     - lottie-ios
     - LPSnackbar
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   AlamofireNetworkActivityLogger: 94e8a7d454a4a9800cef1d0c1d3699754493684b
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   JWTDecode: 4bd4da0cdf0f8154fd467fa48499f34ec057fb88
+  KMPlaceholderTextView: 2206c3df39979e9396e2d96fa9f427a8951121b0
   lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   LPSnackbar: 27311158a371484d51fa5eace8bbe7a08eaddcfa
 
-PODFILE CHECKSUM: b062781e5f41f2c6df6907a0513c8189c603925b
+PODFILE CHECKSUM: 17d8caf5e6c36330adaae75d99097484dde267ef
 
 COCOAPODS: 1.9.3
