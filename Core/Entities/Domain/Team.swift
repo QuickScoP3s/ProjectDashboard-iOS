@@ -6,8 +6,6 @@
 //  Copyright © 2019 Quick Development. All rights reserved.
 //
 
-import Foundation
-
 public class Team: Codable {
 	
 	public let id: Int

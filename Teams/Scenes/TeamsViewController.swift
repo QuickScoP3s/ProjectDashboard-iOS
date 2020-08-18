@@ -54,10 +54,12 @@ class TeamsViewController: UIViewController {
 		view.addSubview(animationView)
 		animationView.isHidden = true
 		
-		animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-		animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-		animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-		animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+		NSLayoutConstraint.activate([
+			animationView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			animationView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+			animationView.heightAnchor.constraint(equalToConstant: 200),
+			animationView.widthAnchor.constraint(equalToConstant: 200)
+		])
 		
 		if viewModel.teams == nil {
 			reloadTeams()

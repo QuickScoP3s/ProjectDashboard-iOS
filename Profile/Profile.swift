@@ -17,8 +17,8 @@ public class Profile: Feature {
 		return profileCoord
 	}
 	
-	public init(userHelper: UserHelper) {
-		self.profileCoord = ProfileCoordinator(userHelper: userHelper)
+	public init(userHelper: UserHelper, networking: Networking) {
+		self.profileCoord = ProfileCoordinator(userHelper: userHelper, networking: networking)
 	}
 	
 	public func start(on viewcontroller: UIViewController?) {

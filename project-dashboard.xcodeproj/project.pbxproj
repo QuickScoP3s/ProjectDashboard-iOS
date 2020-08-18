@@ -153,6 +153,10 @@
 		DAA9CB9E24E2C0FC0043253E /* ProjectDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85583E24E148A800F2EDA9 /* ProjectDetailsCoordinator.swift */; };
 		DAA9CBA024E56D1D0043253E /* TaskCreatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CB9F24E56D1D0043253E /* TaskCreatorViewModel.swift */; };
 		DAA9CBA224E57AAA0043253E /* ProjectTaskDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA124E57AAA0043253E /* ProjectTaskDTO.swift */; };
+		DAA9CBA624E9C9C90043253E /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA524E9C9C90043253E /* StatsService.swift */; };
+		DAA9CBA824E9C9FF0043253E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA724E9C9FF0043253E /* BaseService.swift */; };
+		DAA9CBAA24E9CC5E0043253E /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA924E9CC5E0043253E /* UserStats.swift */; };
+		DAA9CBAC24E9D2960043253E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBAB24E9D2960043253E /* StatsView.swift */; };
 		DAB9A73724E035B8003A5218 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73624E035B8003A5218 /* EmptyList.json */; };
 		DAB9A73924E04579003A5218 /* NoTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73824E04579003A5218 /* NoTeams.json */; };
 		DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73A24E05359003A5218 /* DateFormatter.swift */; };
@@ -647,6 +651,10 @@
 		DAA9CB9824E2C06A0043253E /* TaskCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreatorViewController.swift; sourceTree = "<group>"; };
 		DAA9CB9F24E56D1D0043253E /* TaskCreatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCreatorViewModel.swift; sourceTree = "<group>"; };
 		DAA9CBA124E57AAA0043253E /* ProjectTaskDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTaskDTO.swift; sourceTree = "<group>"; };
+		DAA9CBA524E9C9C90043253E /* StatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsService.swift; sourceTree = "<group>"; };
+		DAA9CBA724E9C9FF0043253E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		DAA9CBA924E9CC5E0043253E /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
+		DAA9CBAB24E9D2960043253E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		DAB9A73624E035B8003A5218 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
 		DAB9A73824E04579003A5218 /* NoTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoTeams.json; sourceTree = "<group>"; };
 		DAB9A73A24E05359003A5218 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -873,6 +881,7 @@
 				DA4AC09324DEC93500C4D55B /* ActivityIndicator.swift */,
 				DA1D3B6023D1DAC0001043BE /* RoundButton.swift */,
 				DA4AC0A924DF0A3600C4D55B /* SubtitleCell.swift */,
+				DAA9CBAB24E9D2960043253E /* StatsView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -928,9 +937,11 @@
 			isa = PBXGroup;
 			children = (
 				DA427A7823B409CF00BFB0CE /* AuthService.swift */,
+				DAA9CBA724E9C9FF0043253E /* BaseService.swift */,
 				DA1A6BC423D4EC6E007E5260 /* ProjectsService.swift */,
-				DA1A6BE523D50081007E5260 /* TeamsService.swift */,
+				DAA9CBA524E9C9C90043253E /* StatsService.swift */,
 				DAA9CB9324E2B49F0043253E /* TasksService.swift */,
+				DA1A6BE523D50081007E5260 /* TeamsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -943,6 +954,7 @@
 				DA427A8223B414EE00BFB0CE /* ProjectTask.swift */,
 				DA427A8323B414EE00BFB0CE /* Team.swift */,
 				DA427A8023B414ED00BFB0CE /* User.swift */,
+				DAA9CBA924E9CC5E0043253E /* UserStats.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -2032,6 +2044,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAA9CBAC24E9D2960043253E /* StatsView.swift in Sources */,
 				DA4AC09424DEC93500C4D55B /* ActivityIndicator.swift in Sources */,
 				DA4AC0AA24DF0A3600C4D55B /* SubtitleCell.swift in Sources */,
 				DA1D3B6123D1DAC0001043BE /* RoundButton.swift in Sources */,
@@ -2063,6 +2076,7 @@
 				DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */,
 				DA2D1E8B23D21ECE00D880EB /* AuthDTO.swift in Sources */,
 				DA1A6BC723D4ED03007E5260 /* ProjectDTO.swift in Sources */,
+				DAA9CBAA24E9CC5E0043253E /* UserStats.swift in Sources */,
 				DAA9CBA224E57AAA0043253E /* ProjectTaskDTO.swift in Sources */,
 				DA427A8523B414EE00BFB0CE /* User.swift in Sources */,
 				DA427A8723B414EE00BFB0CE /* ProjectTask.swift in Sources */,
@@ -2077,8 +2091,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA1A6BE623D50081007E5260 /* TeamsService.swift in Sources */,
+				DAA9CBA624E9C9C90043253E /* StatsService.swift in Sources */,
 				DA1A6BC523D4EC6E007E5260 /* ProjectsService.swift in Sources */,
 				DA42B5C223B368D0008DC912 /* NativeNetworking.swift in Sources */,
+				DAA9CBA824E9C9FF0043253E /* BaseService.swift in Sources */,
 				DAA9CB9424E2B49F0043253E /* TasksService.swift in Sources */,
 				DA427A7923B409CF00BFB0CE /* AuthService.swift in Sources */,
 			);

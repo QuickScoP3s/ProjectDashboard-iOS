@@ -9,13 +9,10 @@
 import Core
 import Alamofire
 
-public class TasksService {
-	
-	private let baseUrl = "tasks"
-	private let networking: Networking
+public class TasksService: BaseService {
 	
 	public init(networking: Networking) {
-		self.networking = networking
+		super.init(baseUrl: "tasks", networking: networking)
 	}
 	
 	// MARK: - API Calls

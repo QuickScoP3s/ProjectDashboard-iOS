@@ -9,13 +9,10 @@
 import Core
 import Utils
 
-public class ProjectsService {
-	
-	private let baseUrl = "projects"
-	private let networking: Networking
+public class ProjectsService: BaseService {
 	
 	public init(networking: Networking) {
-		self.networking = networking
+		super.init(baseUrl: "projects", networking: networking)
 	}
 	
 	// MARK: - API Calls

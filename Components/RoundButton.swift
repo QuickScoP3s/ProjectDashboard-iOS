@@ -16,8 +16,8 @@ public class RoundButton: UIButton {
 		setup()
 	}
 	
-	public required init?(coder aDecoder: NSCoder) {
-		super.init(coder: aDecoder)
+	public required init?(coder: NSCoder) {
+		super.init(coder: coder)
 		setup()
 	}
 	

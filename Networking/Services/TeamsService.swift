@@ -8,13 +8,10 @@
 
 import Core
 
-public class TeamsService {
-	
-	private let baseUrl = "teams"
-	private let networking: Networking
+public class TeamsService: BaseService {
 	
 	public init(networking: Networking) {
-		self.networking = networking
+		super.init(baseUrl: "teams", networking: networking)
 	}
 	
 	// MARK: - API Calls

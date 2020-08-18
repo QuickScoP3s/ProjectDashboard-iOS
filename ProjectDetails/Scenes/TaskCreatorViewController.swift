@@ -48,12 +48,19 @@ class TaskCreatorViewController: UIViewController {
 	func loadTask() {
 		view.activityIndicator.startAnimating()
 		
+		self.txtTitle.text = "Loading..."
+		self.txtTitle.isEnabled = false
+		self.txtDescription.isEditable = false
+		
 		viewModel.fetchTaskDetails { result in
 			switch result {
 				case .failure(let error):
 					print("😓 \(error.localizedDescription)")
 				case .success(let task):
 					DispatchQueue.main.async {
+						self.txtTitle.isEnabled = true
+						self.txtDescription.isEditable = true
+						
 						self.txtTitle.text = task.title
 						self.txtDescription.text = task.description
 						self.btnSave.isEnabled = true

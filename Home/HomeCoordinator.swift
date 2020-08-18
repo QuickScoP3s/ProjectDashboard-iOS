@@ -35,7 +35,7 @@ class HomeCoordinator: Coordinator {
 	}()
 	
 	private lazy var profile: Feature = {
-		let profileFeature = Profile(userHelper: self.userHelper)
+		let profileFeature = Profile(userHelper: self.userHelper, networking: self.networking)
 		profileFeature.signOutCallback = self.close
 		
 		return profileFeature

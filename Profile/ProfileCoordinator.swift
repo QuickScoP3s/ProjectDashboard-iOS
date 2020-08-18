@@ -11,6 +11,7 @@ import Core
 
 class ProfileCoordinator: Coordinator {
 	private let userHelper: UserHelper
+	private let networking: Networking
 	
 	weak var parentViewController: UIViewController?
 	weak var delegate: CoordinatorDelegate?
@@ -21,11 +22,12 @@ class ProfileCoordinator: Coordinator {
 	}
 	
 	private lazy var profileViewModel: ProfileViewModel = {
-		return ProfileViewModel(userHelper: self.userHelper, coordinator: self)
+		return ProfileViewModel(userHelper: self.userHelper, networking: self.networking, coordinator: self)
 	}()
 	
-	init(userHelper: UserHelper) {
+	init(userHelper: UserHelper, networking: Networking) {
 		self.userHelper = userHelper
+		self.networking = networking
 	}
 	
 	func start() {

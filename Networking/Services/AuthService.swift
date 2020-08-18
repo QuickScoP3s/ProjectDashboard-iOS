@@ -8,13 +8,10 @@
 
 import Core
 
-public class AuthService {
-	
-	private let baseUrl = "auth"
-	private let networking: Networking
+public class AuthService: BaseService {
 	
 	public init(networking: Networking) {
-		self.networking = networking
+		super.init(baseUrl: "auth", networking: networking)
 	}
 	
 	// MARK: - API Calls

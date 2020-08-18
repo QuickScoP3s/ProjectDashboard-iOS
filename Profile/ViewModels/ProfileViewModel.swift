@@ -11,11 +11,16 @@ import Core
 import Networking
 
 class ProfileViewModel {
+	
 	private let userHelper: UserHelper
+	private let statsService: StatsService
 	private weak var coordinator: ProfileCoordinator?
 	
-	init(userHelper: UserHelper, coordinator: ProfileCoordinator) {
+	var stats: UserStats?
+	
+	init(userHelper: UserHelper, networking: Networking, coordinator: ProfileCoordinator) {
 		self.userHelper = userHelper
+		self.statsService = StatsService(networking: networking)
 		self.coordinator = coordinator
 	}
 	
@@ -30,6 +35,16 @@ class ProfileViewModel {
 	
 	var userEmail: String {
 		return user.email
+	}
+	
+	func fetchStats(completion: @escaping ((Result<UserStats, Error>) -> Void)) {
+		statsService.getStats { result in
+			if let stats = try? result.get() {
+				self.stats = stats
+			}
+			
+			completion(result)
+		}
 	}
 	
 	@objc func signOut() {

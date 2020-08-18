@@ -78,16 +78,19 @@ class ProjectsViewController: UIViewController {
 		view.addSubview(animationStack)
 		
 		animationStack.isHidden = true
-		animationStack.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-		animationStack.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 		
-		animationView.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor).isActive = true
-		animationView.centerYAnchor.constraint(equalTo: animationStack.centerYAnchor).isActive = true
-		animationView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-		animationView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-		
-		label.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor).isActive = true
-		label.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -15).isActive = true
+		NSLayoutConstraint.activate([
+			animationStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			animationStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			
+			animationView.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor),
+			animationView.centerYAnchor.constraint(equalTo: animationStack.centerYAnchor),
+			animationView.heightAnchor.constraint(equalToConstant: 200),
+			animationView.widthAnchor.constraint(equalToConstant: 200),
+			
+			label.centerXAnchor.constraint(equalTo: animationStack.centerXAnchor),
+			label.topAnchor.constraint(equalTo: animationView.bottomAnchor, constant: -15)
+		])
 	}
 	
 	@objc func refresh(_ refreshControl: UIRefreshControl) {
