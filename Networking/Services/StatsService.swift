@@ -19,4 +19,8 @@ public class StatsService: BaseService {
 	public func getStats(completion: @escaping ((Result<UserStats, Error>) -> Void)) {
 		networking.getJSONResult(from: Request(url: baseUrl), completion: completion)
 	}
+	
+	public func getStats(forProjectId projectId: Int, completion: @escaping ((Result<ProjectStats, Error>) -> Void)) {
+		networking.getJSONResult(from: Request(url: "\(baseUrl)/project/\(projectId)"), completion: completion)
+	}
 }

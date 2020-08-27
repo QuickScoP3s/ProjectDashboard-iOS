@@ -13,10 +13,12 @@ public struct ProjectTaskDTO: Codable {
 	public let title: String
 	public let description: String?
 	public let projectId: Int
+	public let assigneeId: Int?
 	
-	public init(title: String, description: String?, projectId: Int) {
+	public init(title: String, description: String?, projectId: Int, assigneeId: Int?) {
 		self.title = title
 		self.description = description
 		self.projectId = projectId
+		self.assigneeId = assigneeId
 	}
 }

@@ -30,6 +30,11 @@ class ProjectDetailsCoordinator: Coordinator {
 										 coordinator: self)
 	}()
 	
+	private lazy var detailsViewModel: ProjectDetailsViewModel = {
+		return ProjectDetailsViewModel(projectId: self.projectId,
+												 networking: self.networking)
+	}()
+	
 	init(projectId: Int, projectName: String, networking: Networking, userHelper: UserHelper) {
 		self.projectId = projectId
 		self.projectName = projectName
@@ -43,8 +48,8 @@ class ProjectDetailsCoordinator: Coordinator {
 													  image: UIImage(systemName: "list.bullet"),
 													  selectedImage: nil)
 		
-		let projectProperties = ProjectPropertiesViewController()
-		projectProperties.tabBarItem = UITabBarItem(title: "Properties",
+		let projectProperties = ProjectDetailsViewController(viewModel: self.detailsViewModel)
+		projectProperties.tabBarItem = UITabBarItem(title: "Details",
 																  image: UIImage(systemName: "doc.text.magnifyingglass"),
 																  selectedImage: nil)
 		
@@ -61,22 +66,34 @@ class ProjectDetailsCoordinator: Coordinator {
 	}
 	
 	func presentAddTask() {
-		let viewModel = TaskCreatorViewModel(projectId: self.projectId,
+		let viewModel = TaskDetailsViewModel(projectId: self.projectId,
 														 networking: self.networking,
 														 coordinator: self)
 		
-		let viewController = TaskCreatorViewController(viewModel: viewModel)
+		let viewController = TaskDetailsViewController(viewModel: viewModel)
 		tabBarController.present(viewController, animated: true)
 	}
 	
 	func presentTaskDetails(withId id: Int) {
-		let viewModel = TaskCreatorViewModel(projectId: self.projectId,
+		let viewModel = TaskDetailsViewModel(projectId: self.projectId,
 														 taskId: id,
 														 networking: self.networking,
 														 coordinator: self)
 		
-		let viewController = TaskCreatorViewController(viewModel: viewModel)
+		let viewController = TaskDetailsViewController(viewModel: viewModel)
 		tabBarController.present(viewController, animated: true)
+	}
+	
+	func presentPersonPicker(projectId: Int) {
+		let viewModel = PersonPickerViewModel(projectId: projectId,
+														  networking: self.networking)
+		
+		if let delegate = tabBarController.presentedViewController as? PersonPickerDelegate {
+			viewModel.delegate = delegate
+		}
+		
+		let viewController = PersonPickerViewController(viewModel: viewModel)
+		tabBarController.presentedViewController?.present(viewController, animated: true)
 	}
 	
 	func refreshTasksOverview() {

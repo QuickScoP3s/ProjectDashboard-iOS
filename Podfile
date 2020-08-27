@@ -38,6 +38,10 @@ abstract_target 'PodBase' do
 
 	end
 
+	target 'Components' do
+
+	end
+
 	target 'Utils' do
 
 	end

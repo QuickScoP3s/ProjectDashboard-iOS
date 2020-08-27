@@ -39,7 +39,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-rn-0X0" userLabel="Projects Count" customClass="StatsView" customModule="Components">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWg-rn-0X0" userLabel="Projects Count" customClass="StatsView" customModule="Components">
                     <rect key="frame" x="20" y="251" width="374" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <userDefinedRuntimeAttributes>
@@ -47,7 +47,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="detailsText" value="..."/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7il-lw-XMp" userLabel="Teams Count" customClass="StatsView" customModule="Components">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7il-lw-XMp" userLabel="Teams Count" customClass="StatsView" customModule="Components">
                     <rect key="frame" x="20" y="292.5" width="374" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <userDefinedRuntimeAttributes>
@@ -55,7 +55,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="detailsText" value="..."/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pDW-Jz-9y6" userLabel="Assigned Tasks" customClass="StatsView" customModule="Components">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDW-Jz-9y6" userLabel="Assigned Tasks" customClass="StatsView" customModule="Components">
                     <rect key="frame" x="20" y="349" width="374" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <userDefinedRuntimeAttributes>
@@ -63,7 +63,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="detailsText" value="..."/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-zr-cYH" userLabel="Tasks In Progress" customClass="StatsView" customModule="Components">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dsy-zr-cYH" userLabel="Tasks In Progress" customClass="StatsView" customModule="Components">
                     <rect key="frame" x="20" y="390.5" width="374" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <userDefinedRuntimeAttributes>
@@ -71,7 +71,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="detailsText" value="..."/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8z-Qf-rzJ" userLabel="Completed Tasks" customClass="StatsView" customModule="Components">
+                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M8z-Qf-rzJ" userLabel="Completed Tasks" customClass="StatsView" customModule="Components">
                     <rect key="frame" x="20" y="432" width="374" height="41.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <userDefinedRuntimeAttributes>

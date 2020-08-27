@@ -1,5 +1,5 @@
 //
-//  TaskCreatorViewController.swift
+//  TaskDetailsViewController.swift
 //  ProjectDetails
 //
 //  Created by Waut Wyffels on 11/08/2020.
@@ -9,17 +9,21 @@
 import UIKit
 import Components
 import LPSnackbar
+import Core
 
-class TaskCreatorViewController: UIViewController {
-	private let viewModel: TaskCreatorViewModel
+class TaskDetailsViewController: UIViewController {
+	private let viewModel: TaskDetailsViewModel
 	
 	@IBOutlet weak var txtTitle: UITextField!
 	@IBOutlet weak var txtDescription: UITextView!
+	
+	@IBOutlet weak var assigneeField: PersonField!
+	
 	@IBOutlet weak var btnSave: UIButton!
 	
 	// MARK: Init
 	
-	init(viewModel: TaskCreatorViewModel) {
+	init(viewModel: TaskDetailsViewModel) {
 		self.viewModel = viewModel
 		
 		let bundle = Bundle(for: type(of: self))
@@ -36,9 +40,13 @@ class TaskCreatorViewController: UIViewController {
 		super.viewDidLoad()
 		
 		btnSave.setBackgroundColor(color: .gray, forState: .disabled)
-		btnSave.addTarget(self, action: #selector(saveTask), for: .touchUpInside)
+		
+		assigneeField.delegate = self
+		assigneeField.clearButtonMode = .never
 		
 		txtTitle.addTarget(self, action: #selector(titleChanged(_:)), for: .editingChanged)
+		assigneeField.addTarget(viewModel, action: #selector(viewModel.selectAssignee), for: .touchUpInside)
+		btnSave.addTarget(self, action: #selector(saveTask), for: .touchUpInside)
 		
 		if viewModel.taskId != nil {
 			loadTask()
@@ -62,6 +70,9 @@ class TaskCreatorViewController: UIViewController {
 						self.txtDescription.isEditable = true
 						
 						self.txtTitle.text = task.title
+						
+						self.setAssignee(task.assignee)
+						
 						self.txtDescription.text = task.description
 						self.btnSave.isEnabled = true
 					}
@@ -69,6 +80,20 @@ class TaskCreatorViewController: UIViewController {
 			
 			self.view.activityIndicator.stopAnimating()
 		}
+	}
+	
+	private func setAssignee(_ user: User?) {
+		guard let user = user else {
+			assigneeField.prefixText = ""
+			assigneeField.person = nil
+			assigneeField.clearButtonMode = .never
+			
+			return
+		}
+		
+		assigneeField.prefixText = "Assigned to:"
+		assigneeField.person = user
+		assigneeField.clearButtonMode = .always
 	}
 	
 	@objc func titleChanged(_ textField: UITextField) {
@@ -85,7 +110,7 @@ class TaskCreatorViewController: UIViewController {
 	@objc func saveTask() {
 		guard let title = txtTitle.text, let description = txtDescription.text else { return }
 		
-		viewModel.saveTask(title: title, description: description) { result in
+		viewModel.saveTask(title: title, description: description, assignee: assigneeField.person) { result in
 			switch result {
 				case .failure(let error):
 					guard let afErr = error.asAFError, let code = afErr.responseCode else {
@@ -99,5 +124,31 @@ class TaskCreatorViewController: UIViewController {
 					self.dismiss(animated: true)
 			}
 		}
+	}
+}
+
+// MARK: - PersonPickerDelegate
+
+extension TaskDetailsViewController: PersonPickerDelegate {
+	
+	func personPicked(_ person: User) {
+		self.presentedViewController?.dismiss(animated: true)
+		self.setAssignee(person)
+	}
+}
+
+// MARK: - UITextFieldDelegate
+
+extension TaskDetailsViewController: UITextFieldDelegate {
+	
+	func textFieldShouldClear(_ textField: UITextField) -> Bool {
+		if let assigneeField = textField as? PersonField {
+			assigneeField.prefixText = ""
+			assigneeField.person = nil
+			assigneeField.clearButtonMode = .never
+		}
+		
+		textField.resignFirstResponder()
+		return false
 	}
 }

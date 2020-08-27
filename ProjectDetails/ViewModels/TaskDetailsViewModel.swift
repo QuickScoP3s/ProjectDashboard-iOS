@@ -1,5 +1,5 @@
 //
-//  TaskCreatorViewModel.swift
+//  TaskDetailsViewModel.swift
 //  ProjectDetails
 //
 //  Created by Waut Wyffels on 13/08/2020.
@@ -9,7 +9,7 @@
 import Core
 import Networking
 
-class TaskCreatorViewModel: NSObject {
+class TaskDetailsViewModel: NSObject {
 	
 	let projectId: Int
 	let taskId: Int?
@@ -37,8 +37,11 @@ class TaskCreatorViewModel: NSObject {
 		}
 	}
 	
-	func saveTask(title: String, description: String, completion: @escaping ((Result<Void, Error>) -> Void)) {
-		let task = ProjectTaskDTO(title: title, description: description, projectId: self.projectId)
+	func saveTask(title: String, description: String, assignee: User?, completion: @escaping ((Result<Void, Error>) -> Void)) {
+		let task = ProjectTaskDTO(title: title,
+										  description: description,
+										  projectId: self.projectId,
+										  assigneeId: assignee?.id)
 		
 		func complete(_ result: Result<Void, Error>) {
 			switch result {
@@ -59,5 +62,9 @@ class TaskCreatorViewModel: NSObject {
 		}
 		
 		tasksService.put(task: task, withId: taskId, completion: complete)
+	}
+	
+	@objc func selectAssignee() {
+		coordinator?.presentPersonPicker(projectId: self.projectId)
 	}
 }
