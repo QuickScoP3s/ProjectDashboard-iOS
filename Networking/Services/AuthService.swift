@@ -20,7 +20,7 @@ public class AuthService: BaseService {
 		networking.getJSONResult(from: Request(url: "\(baseUrl)/login", method: .post, body: dto), completion: completion)
 	}
 	
-	public func register(completion: @escaping ((Result<Void, Error>) -> Void)) {
-		
+	public func register(with dto: RegisterDTO, completion: @escaping ((Result<AuthDTO, Error>) -> Void)) {
+		networking.getJSONResult(from: Request(url: "\(baseUrl)/register", method: .post, body: dto), completion: completion)
 	}
 }

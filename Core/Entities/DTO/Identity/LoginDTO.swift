@@ -7,6 +7,7 @@
 //
 
 public struct LoginDTO: Codable {
+	
 	public let email: String
 	public let password: String
 	

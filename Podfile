@@ -1,5 +1,5 @@
 project "project-dashboard.xcodeproj"
-use_frameworks! 
+use_frameworks!
 
 abstract_target 'PodBase' do
 	pod 'JWTDecode'

@@ -30,12 +30,18 @@ class AppCoordinator: Coordinator {
 		return authFeature
 	}()
 	
-	private lazy var home: Feature = {
-		let homeFeature = Home(networking: self.networking, userHelper: self.userHelper)
-		homeFeature.signOutCallback = self.presentLogin
+	// Resettable 'lazy' var
+	private var _home: Feature?
+	private var home: Feature {
+		if _home == nil {
+			let homeFeature = Home(networking: self.networking, userHelper: self.userHelper)
+			homeFeature.signOutCallback = self.signOut
+			
+			self._home = homeFeature
+		}
 		
-		return homeFeature
-	}()
+		return _home!
+	}
 	
 	init(window: UIWindow) {
 		self.window = window
@@ -50,6 +56,7 @@ class AppCoordinator: Coordinator {
 	}
 	
 	func start() {
+		rootViewController.view.backgroundColor = .systemBackground
 		window.rootViewController = rootViewController
 		
 		if !userHelper.isSignedIn {
@@ -66,6 +73,11 @@ class AppCoordinator: Coordinator {
 		DispatchQueue.main.async {
 			self.auth.start(on: self.rootViewController)
 		}
+	}
+	
+	private func signOut() {
+		self._home = nil
+		presentLogin()
 	}
 	
 	func presentHome() {

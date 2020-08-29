@@ -35,4 +35,8 @@ class TeamsCoordinator: Coordinator {
 		let viewController = TeamsViewController(viewModel: self.teamViewModel)
 		navController.viewControllers = [viewController] // Set viewcontroller as first and only controller in the stack
 	}
+	
+	func presentTeamDetails(withId id: Int, teamName: String) {
+		
+	}
 }

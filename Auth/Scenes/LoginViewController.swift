@@ -13,8 +13,9 @@ import LPSnackbar
 import Utils
 
 class LoginViewController: UIViewController {
-	weak var delegate: ViewControllerDelegate?
+	
 	private let viewModel: LoginViewModel
+	weak var delegate: ViewControllerDelegate?
 	
 	@IBOutlet weak var iconView: UIImageView!
 	@IBOutlet weak var btnLogin: UIButton!
