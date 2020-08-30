@@ -18,14 +18,17 @@ If it is not present, recreate it using the "pod install" command
 
 ## Debugging
 - Run the app on a simulator or real device and make sure they are connected to the internet
-- The backend server is located on MS Azure
+- The backend server is located on MS Azure  
+
 - Use the following account to log in:
 ```
 username/email: john.doe@exsertus.be
 password: DemoPassword
 ```
 
-**Note**: If the login doesn't respond or tableview stays empty, try reopening the app, as Azure is likely restarting the WebApp.
+- OR you can register a new account
+
+**Note**: If the login/registration doesn't respond or tableview stays empty, try reopening the app, as Azure is likely restarting the WebApp.
 
 ### Localhost
 While debugging, the "Swift Compiler - Custom Flag" is set to ``DEBUG``. This causes the app to use "localhost" as the network, which requires the "Project Dashboard backend" to be run on your development machine.
@@ -47,8 +50,10 @@ I used CocoaPods for my package manager, with all libs specified in the Podfile.
 Every framework has access to all libraries.
 
 **Libs**:
-- SQLite.swift
 - JWTDecode
 - Alamofire
 - AlamofireNetworkActivityLogger
+- IQKeyboardManagerSwift
 - LPSnackbar
+- KMPlaceholderTextView
+- lottie-ios
