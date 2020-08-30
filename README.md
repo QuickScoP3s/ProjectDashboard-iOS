@@ -21,7 +21,7 @@ If it is not present, recreate it using the "pod install" command
 - The backend server is located on MS Azure
 - Use the following account to log in:
 ```
-username/email: demo.user@exsertus.be
+username/email: john.doe@exsertus.be
 password: DemoPassword
 ```
 
