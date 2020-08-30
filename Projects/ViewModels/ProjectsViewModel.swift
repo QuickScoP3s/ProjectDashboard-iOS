@@ -15,7 +15,7 @@ class ProjectsViewModel: NSObject {
 	private let projectsService: ProjectsService
 	private weak var coordinator: ProjectsCoordinator?
 	
-	var sections: [TeamSection]?
+	var sections: [ProjectSection]?
 	
 	init(networking: Networking, coordinator: ProjectsCoordinator) {
 		self.projectsService = ProjectsService(networking: networking)
@@ -28,8 +28,8 @@ class ProjectsViewModel: NSObject {
 				case .failure(let error):
 					completion(Result.failure(error))
 				case .success(let items):
-					self.sections = TeamSection.group(projects: items)
-					self.sections?.sort { (ls: TeamSection, rs) -> Bool in ls.projects[0].lastEdit > rs.projects[0].lastEdit }
+					self.sections = ProjectSection.group(projects: items)
+					self.sections?.sort { (ls: ProjectSection, rs) -> Bool in ls.projects[0].lastEdit > rs.projects[0].lastEdit }
 					
 					completion(Result.success(items.count > 0))
 			}

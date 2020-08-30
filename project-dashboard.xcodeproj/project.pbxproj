@@ -166,10 +166,13 @@
 		DAA9CBA824E9C9FF0043253E /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA724E9C9FF0043253E /* BaseService.swift */; };
 		DAA9CBAA24E9CC5E0043253E /* UserStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBA924E9CC5E0043253E /* UserStats.swift */; };
 		DAA9CBAC24E9D2960043253E /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAA9CBAB24E9D2960043253E /* StatsView.swift */; };
+		DAB0003024FC470E00F2C36D /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0002F24FC470E00F2C36D /* UILabel.swift */; };
+		DAB0003224FC4C7A00F2C36D /* TeamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0003124FC4C7A00F2C36D /* TeamDetailsViewModel.swift */; };
+		DAB0003424FC500400F2C36D /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB0003324FC500400F2C36D /* UserSection.swift */; };
 		DAB9A73724E035B8003A5218 /* EmptyList.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73624E035B8003A5218 /* EmptyList.json */; };
 		DAB9A73924E04579003A5218 /* NoTeams.json in Resources */ = {isa = PBXBuildFile; fileRef = DAB9A73824E04579003A5218 /* NoTeams.json */; };
 		DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73A24E05359003A5218 /* DateFormatter.swift */; };
-		DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73C24E05476003A5218 /* TeamSection.swift */; };
+		DAB9A73D24E05476003A5218 /* ProjectSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB9A73C24E05476003A5218 /* ProjectSection.swift */; };
 		DABC2F8323D4CF0100133EB8 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFBC45C23D4CC030003FF5E /* ProjectsViewController.swift */; };
 		DAE4944224FAD016008A4D37 /* RegisterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE4944124FAD016008A4D37 /* RegisterDTO.swift */; };
 		DAE4944424FAEC20008A4D37 /* Components.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1D3B5123D1DA64001043BE /* Components.framework */; platformFilter = ios; };
@@ -698,10 +701,13 @@
 		DAA9CBA724E9C9FF0043253E /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		DAA9CBA924E9CC5E0043253E /* UserStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStats.swift; sourceTree = "<group>"; };
 		DAA9CBAB24E9D2960043253E /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		DAB0002F24FC470E00F2C36D /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		DAB0003124FC4C7A00F2C36D /* TeamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailsViewModel.swift; sourceTree = "<group>"; };
+		DAB0003324FC500400F2C36D /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
 		DAB9A73624E035B8003A5218 /* EmptyList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EmptyList.json; sourceTree = "<group>"; };
 		DAB9A73824E04579003A5218 /* NoTeams.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NoTeams.json; sourceTree = "<group>"; };
 		DAB9A73A24E05359003A5218 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
-		DAB9A73C24E05476003A5218 /* TeamSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSection.swift; sourceTree = "<group>"; };
+		DAB9A73C24E05476003A5218 /* ProjectSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectSection.swift; sourceTree = "<group>"; };
 		DABC2F8423D4CF3900133EB8 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		DABC2F8823D4D08000133EB8 /* TeamsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsCoordinator.swift; sourceTree = "<group>"; };
 		DAE4944124FAD016008A4D37 /* RegisterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterDTO.swift; sourceTree = "<group>"; };
@@ -1015,8 +1021,9 @@
 		DA427A8923B6134400BFB0CE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DAB9A73C24E05476003A5218 /* ProjectSection.swift */,
+				DAB0003324FC500400F2C36D /* UserSection.swift */,
 				DA427A8A23B6136F00BFB0CE /* UserHelper.swift */,
-				DAB9A73C24E05476003A5218 /* TeamSection.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -1157,6 +1164,7 @@
 				DAB9A73A24E05359003A5218 /* DateFormatter.swift */,
 				DA85587524E1F8F300F2EDA9 /* UIColor.swift */,
 				DA4AC0A724DED3BF00C4D55B /* UIViewController.swift */,
+				DAB0002F24FC470E00F2C36D /* UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1249,6 +1257,7 @@
 			isa = PBXGroup;
 			children = (
 				DA1A6BE723D50896007E5260 /* TeamsViewModel.swift */,
+				DAB0003124FC4C7A00F2C36D /* TeamDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -2163,7 +2172,8 @@
 				DA182C9223D47FFF00245316 /* Response.swift in Sources */,
 				DA42B59C23B36372008DC912 /* Coordinator.swift in Sources */,
 				DA42B59E23B3639B008DC912 /* Networking.swift in Sources */,
-				DAB9A73D24E05476003A5218 /* TeamSection.swift in Sources */,
+				DAB9A73D24E05476003A5218 /* ProjectSection.swift in Sources */,
+				DAB0003424FC500400F2C36D /* UserSection.swift in Sources */,
 				DA2D1E8B23D21ECE00D880EB /* AuthDTO.swift in Sources */,
 				DAE4944224FAD016008A4D37 /* RegisterDTO.swift in Sources */,
 				DA1A6BC723D4ED03007E5260 /* ProjectDTO.swift in Sources */,
@@ -2198,6 +2208,7 @@
 			files = (
 				DAB9A73B24E05359003A5218 /* DateFormatter.swift in Sources */,
 				DA85587624E1F8F300F2EDA9 /* UIColor.swift in Sources */,
+				DAB0003024FC470E00F2C36D /* UILabel.swift in Sources */,
 				DA4AC0A824DED3BF00C4D55B /* UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2231,6 +2242,7 @@
 			files = (
 				DA1A6BAB23D4D2FB007E5260 /* Teams.swift in Sources */,
 				DA1A6BE923D50896007E5260 /* TeamsViewModel.swift in Sources */,
+				DAB0003224FC4C7A00F2C36D /* TeamDetailsViewModel.swift in Sources */,
 				DA1A6BAD23D4D313007E5260 /* TeamsViewController.swift in Sources */,
 				DA1FEECC24F8DDEB007082D7 /* TeamDetailsViewController.swift in Sources */,
 				DA1A6BAC23D4D301007E5260 /* TeamsCoordinator.swift in Sources */,

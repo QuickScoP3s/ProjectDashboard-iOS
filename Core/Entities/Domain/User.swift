@@ -25,3 +25,14 @@ public struct User: Codable {
 		return nil
 	}
 }
+
+public extension User {
+	
+	var fullName: String {
+		return "\(self.firstName) \(self.lastName)"
+	}
+	
+	var fullNameReverse: String {
+		return "\(self.lastName), \(self.firstName)"
+	}
+}

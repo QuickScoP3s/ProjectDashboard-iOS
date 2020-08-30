@@ -80,5 +80,8 @@ extension TeamsViewModel: UITableViewDataSource {
 extension TeamsViewModel: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let team = self.teams![indexPath.row]
+		coordinator?.presentTeamDetails(team)
 	}
 }

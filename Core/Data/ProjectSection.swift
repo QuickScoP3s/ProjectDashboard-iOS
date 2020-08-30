@@ -1,5 +1,5 @@
 //
-//  TeamSection.swift
+//  ProjectSection.swift
 //  Core
 //
 //  Created by Waut Wyffels on 09/08/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct TeamSection {
+public struct ProjectSection {
 	
 	public let teamId: Int
 	public var projects: [Project]
@@ -24,8 +24,8 @@ public struct TeamSection {
 		self.projects.sort { (lp: Project, rp: Project) -> Bool in lp.lastEdit > rp.lastEdit }
 	}
 	
-	public static func group(projects: [Project]) -> [TeamSection] {
+	public static func group(projects: [Project]) -> [ProjectSection] {
 		let groups = Dictionary(grouping: projects) { $0.teamId }
-		return groups.map(TeamSection.init(teamId:projects:))
+		return groups.map(ProjectSection.init(teamId:projects:))
 	}
 }

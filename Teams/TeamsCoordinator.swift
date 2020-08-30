@@ -36,7 +36,13 @@ class TeamsCoordinator: Coordinator {
 		navController.viewControllers = [viewController] // Set viewcontroller as first and only controller in the stack
 	}
 	
-	func presentTeamDetails(withId id: Int, teamName: String) {
+	func presentTeamDetails(_ team: Team) {
+		let viewModel = TeamDetailsViewModel(teamId: team.id, networking: self.networking)
+		viewModel.teamName = team.name
+		viewModel.teamLeader = team.lead.fullName
+		viewModel.memberCount = team.members.count
 		
+		let viewController = TeamDetailsViewController(viewModel: viewModel)
+		navController.pushViewController(viewController, animated: true)
 	}
 }

@@ -9,6 +9,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeamDetailsViewController" customModule="Teams" customModuleProvider="target">
             <connections>
+                <outlet property="memberCountLabel" destination="wLE-hJ-QyM" id="ThT-Fg-aGg"/>
+                <outlet property="memberList" destination="ayq-ca-OTi" id="f5p-t3-2VP"/>
+                <outlet property="teamLeaderLabel" destination="pni-1t-cUK" id="ZuU-xo-huI"/>
+                <outlet property="teamNameLabel" destination="XtF-ZD-ICQ" id="o3r-Ct-a9O"/>
                 <outlet property="view" destination="fvd-O6-3pT" id="9X7-Es-Ehi"/>
             </connections>
         </placeholder>
@@ -16,9 +20,58 @@
         <view contentMode="scaleToFill" id="fvd-O6-3pT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLE-hJ-QyM" userLabel="Member Count">
+                    <rect key="frame" x="20" y="59" width="68.5" height="16"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XtF-ZD-ICQ">
+                    <rect key="frame" x="20" y="83" width="374" height="34"/>
+                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lead by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1q-lt-pFp" userLabel="Team Lead">
+                    <rect key="frame" x="20" y="125" width="64" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John Doe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pni-1t-cUK" userLabel="Leader Name">
+                    <rect key="frame" x="92" y="125" width="73" height="21"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                    <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="ayq-ca-OTi" userLabel="Member List">
+                    <rect key="frame" x="0.0" y="161" width="414" height="701"/>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="P1q-lt-pFp" firstAttribute="top" secondItem="XtF-ZD-ICQ" secondAttribute="bottom" constant="8" id="9or-Vb-Lyt"/>
+                <constraint firstItem="ayq-ca-OTi" firstAttribute="top" secondItem="P1q-lt-pFp" secondAttribute="bottom" constant="15" id="BW2-Ah-bdi"/>
+                <constraint firstItem="ayq-ca-OTi" firstAttribute="bottom" secondItem="D2T-9g-wBV" secondAttribute="bottom" id="FYs-2b-WDh"/>
+                <constraint firstItem="ayq-ca-OTi" firstAttribute="trailing" secondItem="D2T-9g-wBV" secondAttribute="trailing" id="Tbd-1d-5iB"/>
+                <constraint firstItem="pni-1t-cUK" firstAttribute="leading" secondItem="P1q-lt-pFp" secondAttribute="trailing" constant="8" id="VpN-Ov-ctf"/>
+                <constraint firstItem="XtF-ZD-ICQ" firstAttribute="top" secondItem="wLE-hJ-QyM" secondAttribute="bottom" constant="8" id="WQ9-Sg-ZKU"/>
+                <constraint firstItem="XtF-ZD-ICQ" firstAttribute="leading" secondItem="wLE-hJ-QyM" secondAttribute="leading" id="Wfg-Q6-Y5s"/>
+                <constraint firstItem="P1q-lt-pFp" firstAttribute="leading" secondItem="XtF-ZD-ICQ" secondAttribute="leading" id="brN-Ob-v6N"/>
+                <constraint firstItem="wLE-hJ-QyM" firstAttribute="top" secondItem="D2T-9g-wBV" secondAttribute="top" constant="15" id="dXB-D7-3wg"/>
+                <constraint firstItem="ayq-ca-OTi" firstAttribute="leading" secondItem="D2T-9g-wBV" secondAttribute="leading" id="pRW-44-hKZ"/>
+                <constraint firstAttribute="trailingMargin" secondItem="XtF-ZD-ICQ" secondAttribute="trailing" id="wFA-AJ-MJd"/>
+                <constraint firstItem="wLE-hJ-QyM" firstAttribute="leading" secondItem="fvd-O6-3pT" secondAttribute="leadingMargin" id="ymq-RL-COx"/>
+                <constraint firstItem="pni-1t-cUK" firstAttribute="firstBaseline" secondItem="P1q-lt-pFp" secondAttribute="firstBaseline" id="zx8-qP-b8e"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="D2T-9g-wBV"/>
-            <point key="canvasLocation" x="-206" y="133"/>
+            <point key="canvasLocation" x="-207.24637681159422" y="132.58928571428572"/>
         </view>
     </objects>
 </document>
